@@ -40,3 +40,6 @@ D:\NewtonMedia\git_pdf_hilite_test\NM_PDFHilite_Test\obj\Debug\NM_PDFHilite_Test
 D:\NewtonMedia\git_pdf_hilite_test\NM_PDFHilite_Test\obj\Debug\NM_PDFHilite_Test.g.resources
 D:\NewtonMedia\git_pdf_hilite_test\NM_PDFHilite_Test\obj\Debug\NM_PDFHilite_Test.Properties.Resources.resources
 D:\NewtonMedia\git_pdf_hilite_test\NM_PDFHilite_Test\obj\Debug\NM_PDFHilite_Test.csproj.GenerateResource.Cache
+C:\NewtonMedia\git_pdf_hilite_test\NM_PDFHilite_Test\bin\Debug\NM_PDFHilite_Test.exe.config
+C:\NewtonMedia\git_pdf_hilite_test\NM_PDFHilite_Test\obj\Debug\NM_PDFHilite_Test.exe
+C:\NewtonMedia\git_pdf_hilite_test\NM_PDFHilite_Test\obj\Debug\NM_PDFHilite_Test.pdb

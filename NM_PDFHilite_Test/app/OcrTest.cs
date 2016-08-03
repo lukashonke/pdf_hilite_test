@@ -27,7 +27,7 @@ namespace NM_PDFHilite_Test.app
 
 				Page page = engine.Process(pix);
 
-				string text = page.GetText();
+				string text = page.GetHOCRText(0);
 
 				Output += ("Mean confidence: " + page.GetMeanConfidence());
 				Output += "===========";
