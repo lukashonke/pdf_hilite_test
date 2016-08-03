@@ -11,10 +11,12 @@
                 </MenuItem>
                 <MenuItem Header="Edit">
                     <MenuItem Header="PDF Parser">
-                        <MenuItem Name="Parser1" IsCheckable="True" IsChecked="True" Header="PDFClown" Click="PDFClown_Click" HorizontalAlignment="Left" Width="140"/>
-                        <MenuItem Name="Parser2" IsCheckable="True" IsChecked="False" Header="PDFBox" Click="PDFBox_Click" HorizontalAlignment="Left" Width="140"/>
-                        <MenuItem Name="Tesseract" IsCheckable="True" IsChecked="False" Header="Tesseract OCR" Click="Tesseract_Click" HorizontalAlignment="Left" Width="140"/>
+                        <MenuItem Name="Parser1" IsCheckable="True" IsChecked="True" Header="PDFClown" Click="PDFClown_Click" HorizontalAlignment="Left" Width="170"/>
+                        <MenuItem Name="Parser2" IsCheckable="True" IsChecked="False" Header="PDFBox (TODO)" Click="PDFBox_Click" HorizontalAlignment="Left" Width="170"/>
+                        <MenuItem Name="Tesseract" IsCheckable="True" IsChecked="False" Header="Tesseract OCR" Click="Tesseract_Click" HorizontalAlignment="Left" Width="170"/>
                     </MenuItem>
+                    <MenuItem Name="ShowMetadata" IsCheckable="True" IsChecked="True" Header="Show Metadata" Click="ShowMetadata_Click" HorizontalAlignment="Left" Width="200"/>
+                    <MenuItem Name="ConvertPDF" IsCheckable="True" IsChecked="True" Header="Convert to img" Click="ConvertPdf_Click" HorizontalAlignment="Left" Width="200"/>
                 </MenuItem>
                 <MenuItem Header="Help"/>
             </Menu>
@@ -37,13 +39,14 @@
             <GridSplitter Grid.Column="1" ShowsPreview="True" VerticalAlignment="Stretch" HorizontalAlignment="Center" Width="10"/>
 
             <StackPanel Grid.Column="0">
-                
-                <Label Name="FileNameLabel" Content="{Binding FileName, Mode=TwoWay}"/>
-                <Label Name="ParamLabel" Content="Param"/>
+
+                <Label Name="FileNameLabel" Content="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Name="PathLabel" Content="{Binding Path, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Name="Metadata" Text="{Binding Parameters, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Grid.Column="2"/>
                 
             </StackPanel>
 
-            <TextBox Text="{Binding Text}" Grid.Column="2"/>
+            <TextBox Name="ProgramOutput" Text="{Binding Text}" Grid.Column="2"/>
         </Grid>
 
         <Grid.RowDefinitions>

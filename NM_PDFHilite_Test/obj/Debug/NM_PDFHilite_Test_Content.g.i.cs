@@ -12,5 +12,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("x64/libtesseract304.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("x86/liblept172.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("x86/libtesseract304.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("magick.net-q8-x86.native.dll")]
 
 

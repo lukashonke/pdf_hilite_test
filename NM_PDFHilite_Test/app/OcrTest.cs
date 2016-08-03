@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using ImageMagick;
 using Tesseract;
 
 namespace NM_PDFHilite_Test.app
@@ -20,8 +21,7 @@ namespace NM_PDFHilite_Test.app
 		{
 			try
 			{
-				Debug.Write(Environment.CurrentDirectory);
-				TesseractEngine engine = new TesseractEngine(@"../../tessdata", "ces", EngineMode.Default);
+				/*TesseractEngine engine = new TesseractEngine(@"../../tessdata", "ces", EngineMode.Default);
 
 				Pix pix = Pix.LoadFromFile(@"../../ocr_test/test1.png");
 
@@ -31,7 +31,7 @@ namespace NM_PDFHilite_Test.app
 
 				Output += ("Mean confidence: " + page.GetMeanConfidence());
 				Output += "===========";
-				Output += ("\nText:\n " + text);
+				Output += ("\nText:\n " + text);*/
 			}
 			catch (Exception e)
 			{

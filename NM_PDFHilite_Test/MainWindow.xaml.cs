@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 using NM_PDFHilite_Test.app;
+using Path = System.IO.Path;
 
 namespace NM_PDFHilite_Test
 {
@@ -26,9 +28,24 @@ namespace NM_PDFHilite_Test
 		private PdfDocumentInfo currentFile;
 		private ParserType selectedType;
 
+		private readonly BackgroundWorker worker;
+
+		private bool showMetadata;
+		private bool convertToImg;
+
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			worker = new BackgroundWorker();
+			worker.DoWork += Worker_DoWork;
+			worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
+			worker.ProgressChanged += Worker_ProgressChanged;
+
+			worker.WorkerReportsProgress = true;
+
+			this.showMetadata = ShowMetadata.IsChecked;
+			this.convertToImg = ConvertPDF.IsChecked;
 		}
 
 		public ParserType SelectedType
@@ -46,19 +63,85 @@ namespace NM_PDFHilite_Test
 
 			if (result == true)
 			{
-				string name = dlg.FileName;
+				string path = dlg.FileName;
 
-				if (File.Exists(name))
+				if (File.Exists(path))
 				{
 					PdfDocumentInfo doc = new PdfDocumentInfo();
-					doc.FileName = name;
+					doc.Path = path;
+					doc.FileName = Path.GetFileName(path);
 					currentFile = doc;
 
 					StartProcessing();
-					
+
 					this.DataContext = currentFile;
 				}
 			}
+		}
+
+		private void Worker_DoWork(object sender, DoWorkEventArgs e)
+		{
+			BackgroundWorker worker = (BackgroundWorker) sender;
+
+			worker.ReportProgress(0);
+
+			if (convertToImg || selectedType == ParserType.Tesseract)
+			{
+				ConvertPdfToImage conv = new ConvertPdfToImage(currentFile);
+				conv.Process();
+			}
+
+			worker.ReportProgress(25);
+
+			if (showMetadata)
+			{
+				MetadataReader meta = new MetadataReader(currentFile);
+				meta.Process();
+
+				currentFile.Parameters = meta.Output;
+			}
+
+			worker.ReportProgress(50);
+
+			PdfReader reader = null;
+
+			switch (selectedType)
+			{
+				case ParserType.PDFClown:
+
+					reader = new PdfClownReader(currentFile);
+					reader.Process();
+
+					break;
+				case ParserType.PDFBox:
+
+					//TODO ?? 
+
+					break;
+				case ParserType.Tesseract:
+
+					reader = new OcrTest(currentFile);
+					reader.Process();
+
+					break;
+			}
+
+			string text = reader.Output;
+			currentFile.Text = text;
+
+			worker.ReportProgress(100);
+		}
+
+		private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+		{
+			ProgramOutput.Text = currentFile.Text;
+			Metadata.Text = currentFile.Parameters;
+		}
+
+		private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+		{
+			ProgramOutput.Text = e.ProgressPercentage + "% done";
+			//FileNameLabel.Content = e.ProgressPercentage + "% done";
 		}
 
 		private void StartProcessing()
@@ -69,31 +152,7 @@ namespace NM_PDFHilite_Test
 				return;
 			}
 
-			PdfReader reader = null;
-
-			switch (selectedType)
-			{
-					case ParserType.PDFClown:
-
-						reader = new PdfClownReader(currentFile);
-						reader.Process();
-
-						break;
-					case ParserType.PDFBox:
-
-						//TODO ?? 
-
-						break;
-					case ParserType.Tesseract:
-
-						reader = new OcrTest(currentFile);
-						reader.Process();
-
-						break;
-			}
-
-			string text = reader.Output;
-			currentFile.Text = text;
+			worker.RunWorkerAsync();
 		}
 
 		private void PDFClown_Click(object sender, RoutedEventArgs e)
@@ -121,6 +180,20 @@ namespace NM_PDFHilite_Test
 			Parser1.IsChecked = false;
 			Parser2.IsChecked = false;
 			Tesseract.IsChecked = true;
+		}
+
+		private void ShowMetadata_Click(object sender, RoutedEventArgs e)
+		{
+			//ShowMetadata.IsChecked = !ShowMetadata.IsChecked;
+
+			showMetadata = ShowMetadata.IsChecked;
+		}
+
+		private void ConvertPdf_Click(object sender, RoutedEventArgs e)
+		{
+			//ConvertPDF.IsChecked = !ConvertPDF.IsChecked;
+
+			convertToImg = ConvertPDF.IsChecked;
 		}
 	}
 

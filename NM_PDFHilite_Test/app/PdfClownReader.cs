@@ -33,7 +33,7 @@ namespace NM_PDFHilite_Test.app
 
 		public override void Process()
 		{
-			pdfFile = new File(currentDocumentInfo.FileName);
+			pdfFile = new File(CurrentDocumentInfo.Path);
 
 			foreach (Page page in pdfFile.Document.Pages)
 			{

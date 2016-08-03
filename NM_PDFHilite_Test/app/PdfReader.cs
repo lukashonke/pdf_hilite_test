@@ -8,7 +8,7 @@ namespace NM_PDFHilite_Test.app
 {
 	public abstract class PdfReader
 	{
-		protected PdfDocumentInfo currentDocumentInfo;
+		private PdfDocumentInfo currentDocumentInfo;
 
 		public PdfReader(PdfDocumentInfo doc)
 		{
@@ -16,6 +16,11 @@ namespace NM_PDFHilite_Test.app
 		}
 
 		public string Output { get; protected set; }
+
+		public PdfDocumentInfo CurrentDocumentInfo
+		{
+			get { return currentDocumentInfo; }
+		}
 
 		public abstract void Process();
 	}
