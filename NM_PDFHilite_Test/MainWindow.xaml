@@ -15,8 +15,8 @@
                         <MenuItem Name="Parser2" IsCheckable="True" IsChecked="False" Header="PDFBox (TODO)" Click="PDFBox_Click" HorizontalAlignment="Left" Width="170"/>
                         <MenuItem Name="Tesseract" IsCheckable="True" IsChecked="False" Header="Tesseract OCR" Click="Tesseract_Click" HorizontalAlignment="Left" Width="170"/>
                     </MenuItem>
-                    <MenuItem Name="ShowMetadata" IsCheckable="True" IsChecked="True" Header="Show Metadata" Click="ShowMetadata_Click" HorizontalAlignment="Left" Width="200"/>
-                    <MenuItem Name="ConvertPDF" IsCheckable="True" IsChecked="True" Header="Convert to img" Click="ConvertPdf_Click" HorizontalAlignment="Left" Width="200"/>
+                    <MenuItem Name="ShowMetadata" IsCheckable="True" IsChecked="False" Header="Show Metadata" Click="ShowMetadata_Click" HorizontalAlignment="Left" Width="200"/>
+                    <MenuItem Name="ConvertPDF" IsCheckable="True" IsChecked="False" Header="Convert to img" Click="ConvertPdf_Click" HorizontalAlignment="Left" Width="200"/>
                 </MenuItem>
                 <MenuItem Header="Help"/>
             </Menu>

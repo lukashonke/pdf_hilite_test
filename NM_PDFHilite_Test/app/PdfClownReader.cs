@@ -40,7 +40,7 @@ namespace NM_PDFHilite_Test.app
 				ProcessPageUsingExtractor(page);
 				ProcessPage(page);
 
-				Highlight(page, "Toplata");
+				Highlight(page, "kursů");
 				Highlight(page, "DOKUMENTARNA");
 				Highlight(page, "že kdyby o tom rozhodoval");
 				Highlight(page, "souhlasím s tím, že blokace musí");

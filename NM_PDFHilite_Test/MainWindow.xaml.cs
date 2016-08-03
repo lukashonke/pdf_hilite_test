@@ -134,6 +134,7 @@ namespace NM_PDFHilite_Test
 
 		private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
 		{
+			// update info in the app
 			ProgramOutput.Text = currentFile.Text;
 			Metadata.Text = currentFile.Parameters;
 		}
@@ -141,7 +142,6 @@ namespace NM_PDFHilite_Test
 		private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
 		{
 			ProgramOutput.Text = e.ProgressPercentage + "% done";
-			//FileNameLabel.Content = e.ProgressPercentage + "% done";
 		}
 
 		private void StartProcessing()
@@ -184,15 +184,11 @@ namespace NM_PDFHilite_Test
 
 		private void ShowMetadata_Click(object sender, RoutedEventArgs e)
 		{
-			//ShowMetadata.IsChecked = !ShowMetadata.IsChecked;
-
 			showMetadata = ShowMetadata.IsChecked;
 		}
 
 		private void ConvertPdf_Click(object sender, RoutedEventArgs e)
 		{
-			//ConvertPDF.IsChecked = !ConvertPDF.IsChecked;
-
 			convertToImg = ConvertPDF.IsChecked;
 		}
 	}
