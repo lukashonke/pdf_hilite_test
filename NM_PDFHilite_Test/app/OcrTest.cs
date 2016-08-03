@@ -20,9 +20,10 @@ namespace NM_PDFHilite_Test.app
 		{
 			try
 			{
-				TesseractEngine engine = new TesseractEngine(@"./tessdata", "cze", EngineMode.Default);
+				Debug.Write(Environment.CurrentDirectory);
+				TesseractEngine engine = new TesseractEngine(@"../../tessdata", "ces", EngineMode.Default);
 
-				Pix pix = Pix.LoadFromFile(@"./ocr_test/test1.JPG");
+				Pix pix = Pix.LoadFromFile(@"../../ocr_test/test1.png");
 
 				Page page = engine.Process(pix);
 
