@@ -30,8 +30,10 @@ namespace NM_PDFHilite_Test
 
 		private readonly BackgroundWorker worker;
 
-		private bool showMetadata;
-		private bool convertToImg;
+		public bool showMetadata;
+		public bool convertToImg;
+
+		private string status;
 
 		public MainWindow()
 		{
@@ -46,6 +48,8 @@ namespace NM_PDFHilite_Test
 
 			this.showMetadata = ShowMetadata.IsChecked;
 			this.convertToImg = ConvertPDF.IsChecked;
+			
+			Settings.USE_TIF_FORMAT = TifFormat.IsChecked;
 		}
 
 		public ParserType SelectedType
@@ -83,6 +87,7 @@ namespace NM_PDFHilite_Test
 		{
 			BackgroundWorker worker = (BackgroundWorker) sender;
 
+			status = "Creating image from PDF";
 			worker.ReportProgress(0);
 
 			if (convertToImg || selectedType == ParserType.Tesseract)
@@ -91,16 +96,18 @@ namespace NM_PDFHilite_Test
 				conv.Process();
 			}
 
-			worker.ReportProgress(25);
-
 			if (showMetadata)
 			{
+				status = "Creating metadata";
+				worker.ReportProgress(25);
+
 				MetadataReader meta = new MetadataReader(currentFile);
 				meta.Process();
 
 				currentFile.Parameters = meta.Output;
 			}
 
+			status = "Running PDF processor";
 			worker.ReportProgress(50);
 
 			PdfReader reader = null;
@@ -141,7 +148,8 @@ namespace NM_PDFHilite_Test
 
 		private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
 		{
-			ProgramOutput.Text = e.ProgressPercentage + "% done";
+			ProgramOutput.Text = e.ProgressPercentage + "% done\n";
+			ProgramOutput.Text += "(" + status + ")";
 		}
 
 		private void StartProcessing()
@@ -190,6 +198,11 @@ namespace NM_PDFHilite_Test
 		private void ConvertPdf_Click(object sender, RoutedEventArgs e)
 		{
 			convertToImg = ConvertPDF.IsChecked;
+		}
+
+		private void TifFormat_Click(object sender, RoutedEventArgs e)
+		{
+			Settings.USE_TIF_FORMAT = TifFormat.IsChecked;
 		}
 	}
 

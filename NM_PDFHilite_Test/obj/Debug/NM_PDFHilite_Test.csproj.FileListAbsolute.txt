@@ -64,3 +64,6 @@ C:\NewtonMedia\git_pdf_hilite_test\NM_PDFHilite_Test\obj\Debug\NM_PDFHilite_Test
 C:\NewtonMedia\git_pdf_hilite_test\NM_PDFHilite_Test\bin\Debug\Magick.NET-Q8-x86.dll
 C:\NewtonMedia\git_pdf_hilite_test\NM_PDFHilite_Test\bin\Debug\Magick.NET-Q8-x86.xml
 C:\NewtonMedia\git_pdf_hilite_test\NM_PDFHilite_Test\bin\Debug\Magick.NET-Q8-x86.Native.dll
+D:\NewtonMedia\git_pdf_hilite_test\NM_PDFHilite_Test\bin\Debug\Magick.NET-Q8-x86.Native.dll
+D:\NewtonMedia\git_pdf_hilite_test\NM_PDFHilite_Test\bin\Debug\Magick.NET-Q8-x86.dll
+D:\NewtonMedia\git_pdf_hilite_test\NM_PDFHilite_Test\bin\Debug\Magick.NET-Q8-x86.xml

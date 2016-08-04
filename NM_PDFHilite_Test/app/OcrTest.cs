@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,31 +13,64 @@ namespace NM_PDFHilite_Test.app
 {
 	public class OcrTest : PdfReader
 	{
+		// ces | eng
+		private const string language = "ces";
+		private const string imageFolder = "OutputImages/";
+		private const bool hocr = true;
+
+		private string imageExtenion = ".png";
+
 		public OcrTest(PdfDocumentInfo doc) : base(doc)
 		{
-			
+			if (Settings.USE_TIF_FORMAT)
+				imageExtenion = ".tif";
 		}
 
 		public override void Process()
 		{
 			try
 			{
-				TesseractEngine engine = new TesseractEngine(@"../../tessdata", "ces", EngineMode.Default);
+				TesseractEngine engine = new TesseractEngine(@"../../tessdata", language, EngineMode.Default);
 
-				Pix pix = Pix.LoadFromFile(@"../../ocr_test/test1.png");
+				foreach (string file in Directory.GetFiles(imageFolder))
+				{
+					if (file.StartsWith(imageFolder + "" + CurrentDocumentInfo.FileName.Split('.')[0]) && file.EndsWith(imageExtenion))
+					{
+						try
+						{
+							int pageNum = 0;
 
-				Page page = engine.Process(pix);
+							using (Pix pix = Pix.LoadFromFile(file))
+							{
+								using (Page page = engine.Process(pix))
+								{
+									string text;
 
-				string text = page.GetHOCRText(0);
+									if (hocr)
+										text = page.GetHOCRText(pageNum);
+									else
+										text = page.GetText();
 
-				Output += ("Mean confidence: " + page.GetMeanConfidence());
-				Output += "===========";
-				Output += ("\nText:\n " + text);
+									Output += "===========";
+									Output += "Page " + (++pageNum);
+									Output += ("Mean confidence: " + page.GetMeanConfidence());
+									Output += "===========";
+									Output += ("\n" + text);
+								}
+							}
+						}
+						catch (Exception e)
+						{
+							Trace.TraceError(e.ToString());
+							MessageBox.Show("Error while OCR of file OutputImages/" + file + "\n" + e);
+						}
+					}
+				}
 			}
 			catch (Exception e)
 			{
 				Trace.TraceError(e.ToString());
-				MessageBox.Show("Error while OCR: " + e);
+				MessageBox.Show("Error while trying to OCR: " + e);
 			}
 		}
 	}

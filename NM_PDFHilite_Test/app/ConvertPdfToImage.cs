@@ -12,8 +12,6 @@ namespace NM_PDFHilite_Test.app
 {
 	public class ConvertPdfToImage : PdfReader
 	{
-		private const bool SAVE_TIF = false;
-
 		public ConvertPdfToImage(PdfDocumentInfo doc) : base(doc)
 		{
 			
@@ -45,13 +43,13 @@ namespace NM_PDFHilite_Test.app
 					foreach (MagickImage image in images)
 					{
 						// Write page to file that contains the page number
-						image.Write("OutputImages/result.Page" + page + ".png");
+						image.Write("OutputImages/" + CurrentDocumentInfo.FileName + ".Page" + page + ".png");
 
-						if (SAVE_TIF)
+						if (Settings.USE_TIF_FORMAT)
 						{
 							// Writing to a specific format works the same as for a single image
 							image.Format = MagickFormat.Ptif;
-							image.Write("result.Page" + page + ".tif");
+							image.Write("OutputImages/" + CurrentDocumentInfo.FileName + ".Page" + page + ".tif");
 						}
 
 						page++;

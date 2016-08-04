@@ -17,6 +17,7 @@
                     </MenuItem>
                     <MenuItem Name="ShowMetadata" IsCheckable="True" IsChecked="False" Header="Show Metadata" Click="ShowMetadata_Click" HorizontalAlignment="Left" Width="200"/>
                     <MenuItem Name="ConvertPDF" IsCheckable="True" IsChecked="False" Header="Convert to img" Click="ConvertPdf_Click" HorizontalAlignment="Left" Width="200"/>
+                    <MenuItem Name="TifFormat" IsCheckable="True" IsChecked="False" Header="Use .tif format" Click="TifFormat_Click" HorizontalAlignment="Left" Width="200"/>
                 </MenuItem>
                 <MenuItem Header="Help"/>
             </Menu>

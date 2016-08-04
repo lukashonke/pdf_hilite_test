@@ -73,6 +73,7 @@
     <Compile Include="app\PdfDocument.cs" />
     <Compile Include="app\PdfClownReader.cs" />
     <Compile Include="app\PdfReader.cs" />
+    <Compile Include="app\Settings.cs" />
     <Compile Include="mvvm_test\RelayCommand.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
