@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 using org.pdfclown.documents;
 using org.pdfclown.documents.contents;
 using org.pdfclown.documents.interaction.annotations;
+using org.pdfclown.files;
 using org.pdfclown.tools;
 using org.pdfclown.util.math;
 using org.pdfclown.util.math.geom;
@@ -18,59 +20,60 @@ namespace NM_PDFHilite_Test.app
 {
 	public class PdfHighlight : PdfReader
 	{
-		private Page selectedPage;
-		private List<string> words; 
+		private List<string> words;
 
-		public PdfHighlight(PdfDocumentInfo doc, List<string> words) : base(doc)
+		private IDictionary<RectangleF?, IList<ITextString>> textStrings;
+
+		public PdfHighlight(PdfDocumentInfo doc, List<string> words)
+			: base(doc)
 		{
 			this.words = words;
 		}
 
-		public void SetPage(Page page)
+		public PdfHighlight(PdfDocumentInfo doc, params string[] w)
+			: base(doc)
 		{
-			this.selectedPage = page;
+			words = new List<string>();
+
+			foreach (string word in w)
+			{
+				words.Add(word);
+			}
 		}
 
 		public override void Process()
 		{
-			Page page = null;
-
-			// load PDF pages again if not loaded yet
-			// for every page, try to highlight all the words
-
-			if (selectedPage != null)
-				page = selectedPage;
-			else
-			{
-					
-			}
+			File pdfFile = new File(CurrentDocumentInfo.Path);
 
 			TextExtractor extractor = new TextExtractor(true, true);
 
-			foreach (string word in words)
+			foreach (Page page in pdfFile.Document.Pages)
 			{
-				Regex pattern = new Regex(word, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Multiline);
+				textStrings = new Dictionary<RectangleF?, IList<ITextString>>();
 
-				MatchCollection matches;
-
-				if (source == null)
+				try
 				{
-					matches = pattern.Matches(CleanUpString(TextExtractor.ToString(textStrings)));
+					textStrings = extractor.Extract(page);
 				}
-				else
+				catch (Exception e)
 				{
-					matches = pattern.Matches(source);
+					MessageBox.Show("chyba extrakce textu - " + e);
+					throw;
 				}
 
-				extractor.Filter(textStrings, new Filter(matches.GetEnumerator(), page));
+				foreach (string word in words)
+				{
+					Regex pattern = new Regex(word, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Multiline);
+
+					MatchCollection matches;
+
+					matches = pattern.Matches(Utils.CleanUpString(TextExtractor.ToString(textStrings)));
+
+					extractor.Filter(textStrings, new Filter(matches.GetEnumerator(), page));
+				}
 			}
-		}
 
-		private string CleanUpString(string parameter)
-		{
-			parameter = parameter.Replace((char)0xA0, ' ');
-
-			return parameter;
+			pdfFile.Save(pdfFile.Path + "highlighted.pdf", SerializationModeEnum.Incremental);
 		}
 
 		class Filter : TextExtractor.IIntervalFilter

@@ -31,6 +31,11 @@ namespace NM_PDFHilite_Test.app
 		{
 		}
 
+		public string RawText
+		{
+			get { return rawText; }
+		}
+
 		public override void Process()
 		{
 			pdfFile = new File(CurrentDocumentInfo.Path);
@@ -39,14 +44,7 @@ namespace NM_PDFHilite_Test.app
 			{
 				ProcessPageUsingExtractor(page);
 				ProcessPage(page);
-
-				Highlight(page, "kursů");
-				Highlight(page, "DOKUMENTARNA");
-				Highlight(page, "že kdyby o tom rozhodoval");
-				Highlight(page, "souhlasím s tím, že blokace musí");
 			}
-
-			pdfFile.Save(pdfFile.Path + "highlighted.pdf", SerializationModeEnum.Incremental);
 		}
 
 		private void ProcessPageUsingExtractor(Page page)
@@ -107,13 +105,26 @@ namespace NM_PDFHilite_Test.app
 						              + "h:" + Math.Round(textStringBox.Height)
 						              + "] [font size:" + Math.Round(textString.Style.FontSize) + "]: " + textString.Text;
 
-						rawText += textString.Text + "";
+
+						string temp = textString.Text.TrimEnd();
+						string txt;
+
+						if (temp.EndsWith("-") || temp.EndsWith("–") || temp.EndsWith("-"))
+						{
+							txt = temp.Substring(0, temp.Length - 1); // cut off the last letter
+						}
+						else
+						{
+							txt = textString.Text;
+						}
+
+						rawText += txt + "";
 
 						//PdfDataObject encoding = textString.Style.Font.BaseDataObject.Resolve(PdfName.Encoding);
 
 						//PdfDictionary encodingDict = (PdfDictionary) encoding;
 
-						rawText = CleanUpString(rawText);
+						rawText = Utils.CleanUpString(rawText);
 					}
 				}
 				else if (content is ContainerObject)
@@ -121,106 +132,6 @@ namespace NM_PDFHilite_Test.app
 					Process(level.ChildLevel);
 				}
 			}
-		}
-
-		private void Highlight(Page page, string word, string source=null)
-		{
-			TextExtractor extractor = new TextExtractor(true, true);
-			Regex pattern = new Regex(word, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Multiline);
-
-			MatchCollection matches;
-
-			if (source == null)
-			{
-				matches = pattern.Matches(CleanUpString(TextExtractor.ToString(textStrings)));
-			}
-			else
-			{
-				matches = pattern.Matches(source);
-			}
-			
-			extractor.Filter(textStrings, new Filter(matches.GetEnumerator(), page));
-		}
-
-		private string CleanUpString(string parameter)
-		{
-			parameter = parameter.Replace((char)0xA0, ' ');
-
-			return parameter;
-		}
-	}
-
-	class Filter : TextExtractor.IIntervalFilter
-	{
-		private readonly IEnumerator matchEnumerator;
-		private readonly Page page;
-
-		public Filter(IEnumerator matchEnumerator, Page page)
-		{
-			this.matchEnumerator = matchEnumerator;
-			this.page = page;
-		}
-
-		public bool MoveNext()
-		{
-			return matchEnumerator.MoveNext();
-		}
-
-		public Interval<int> Current
-		{
-			get
-			{
-				Match current = (Match)matchEnumerator.Current;
-				return new Interval<int>(current.Index, current.Index + current.Length);
-			}
-		}
-
-		public void Process(Interval<int> interval, ITextString match)
-		{
-			Debug.Write("highlighting word " + match.Text.ToString());
-
-			IList<Quad> quads = new List<Quad>();
-
-			RectangleF? textBox = null;
-			foreach (TextChar textChar in match.TextChars)
-			{
-				RectangleF textCharBox = textChar.Box;
-				if (!textBox.HasValue)
-				{
-					textBox = textCharBox;
-				}
-				else
-				{
-					if (textCharBox.Y > textBox.Value.Bottom)
-					{
-						quads.Add(Quad.Get(textBox.Value));
-						textBox = textCharBox;
-					}
-					else
-					{
-						textBox = RectangleF.Union(textBox.Value, textCharBox);
-					}
-				}
-			}
-
-			quads.Add(Quad.Get(textBox.Value));
-
-			new TextMarkup(page, quads, null, TextMarkup.MarkupTypeEnum.Highlight);
-		}
-
-		object IEnumerator.Current
-		{
-			get { return this.Current; }
-		}
-
-		public void Dispose()
-		{
-			throw new NotImplementedException();
-		}
-
-		public void Reset()
-		{
-			throw new NotImplementedException();
 		}
 	}
 }

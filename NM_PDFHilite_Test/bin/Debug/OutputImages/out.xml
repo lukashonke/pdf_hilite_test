@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15/pagecontent.xsd">
+	<Metadata>
+	<Creator></Creator>
+	<Created>2016-08-04T17:40:12</Created>
+	<LastChange>2016-08-04T17:40:12</LastChange></Metadata>
+	<Page imageFilename="OutputImages/Týden_25_058_37F5F68BF73443A0A43C0205B3B11FEA.pdf.Page1.png" imageWidth="2691" imageHeight="3577">
+	<SeparatorRegion id="r1">
+	<Coords points="976,359 976,3282 973,3282 973,359"/></SeparatorRegion>
+	<SeparatorRegion id="r2">
+	<Coords points="1705,1464 1705,3282 1702,3282 1702,1464"/></SeparatorRegion>
+	<SeparatorRegion id="r3">
+	<Coords points="2425,229 2425,282 657,282 657,229"/></SeparatorRegion>
+	<ImageRegion id="r4">
+	<Coords points="2407,354 2407,1415 996,1415 996,354"/></ImageRegion>
+	<TextRegion id="r5" type="paragraph">
+	<Coords points="944,357 944,793 277,793 277,357"/>
+	<TextEquiv>
+	<Unicode>Nebudu se rouhat. Ale pravděpodobnost,
+že na celém světě ve všech sportech vy—
+hrají úplně všichni favorite, je velice ma—
+linká, nicotná. Ale úplně vyloučit ji sa—
+mozřejmě nelze. Navíc — musel by to být
+nikoli víkend, ale spíše celý týden vý—
+sledků plný výher favoritů. I proto vypi—
+sujeme stovky soutěží a desítky sportů,
+Čímž si diverzifikujeme riziko.</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r6" type="paragraph">
+	<Coords points="944,856 944,941 278,941 278,856"/>
+	<TextEquiv>
+	<Unicode>Už se sázení z kamenných poboček definitivně
+přeneslo na internet?</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r7" type="paragraph">
+	<Coords points="942,957 942,1042 276,1042 276,957"/>
+	<TextEquiv>
+	<Unicode>Ano, ten poměr je jasný: internet má 85
+procent.</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r8" type="paragraph">
+	<Coords points="945,1106 945,1441 277,1441 277,1106"/>
+	<TextEquiv>
+	<Unicode>Nový hazardní zákon otvírá trh zahraniční kon-
+kurenci. Ta tu dříve působila poloilegálně až
+čistě ilegálně, neplatila daně, ale nemohla zase
+třeba mít reklamy. Úmysl vstoupit na trh oznámi-
+la třeba gigantická Paddy Power Betfair. A mno-
+ho dalších. Neobáváte se ztráty pozice jedničky
+na trhu? Nebo výrazného oslabení?</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r9" type="paragraph">
+	<Coords points="944,1457 944,1993 276,1993 276,1457"/>
+	<TextEquiv>
+	<Unicode>Spíše než o obavu jde o respekt. Jsou to
+silní hráči, bude to velká výzva. Zahra—
+niční sázkovky tady už podnikají a je—
+jich náklady jsou marginální. Ted ale bu—
+dou muset platit 23procentní daň. Tím se
+zvýší jejich náklady. Co se týče kursů,
+doted se mohly podbízet. Nyní podmínky
+budou konečně stejně, vyrovnaně. Mu-
+síme dále pracovat na produktu, rozví-
+jet naší komunitu sázkařů a ještě posí—
+lit marketing.</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r10" type="paragraph">
+	<Coords points="944,2057 944,2235 276,2235 276,2057"/>
+	<TextEquiv>
+	<Unicode>Mimochodem, ten hazardní zákon jste relativně
+vyhráli. Sázkové kanceláře měly mít v původním
+návrhu pětadvacetiprocentní daň, máte 23 pro-
+cent</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r11" type="paragraph">
+	<Coords points="945,2257 945,2742 277,2742 277,2257"/>
+	<TextEquiv>
+	<Unicode>Počkejte, měly — Andrej Babiš vždycky
+vystřelí něco, co je trochu nad rámec.
+23 procent je opravdu jedna z nejvyšších
+sazeb v Evropě. Průměrná je 18 procent.
+V Holandsku měli 29 procent a snížili na
+20. Nikdo tam nesázel. V některých vě—
+cech mne Babiš rozčiluje — on říká, že
+zisky hazardu jsou 30 miliard ročně. Ale
+to je špatně, to je marže. Zisk je odha—
+dem 3—4 miliardy.</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r12" type="paragraph">
+	<Coords points="943,2806 943,2885 275,2885 275,2806"/>
+	<TextEquiv>
+	<Unicode>Tvrdý hazard dostal daň 35 procent, což je bru-
+tální.</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r13" type="paragraph">
+	<Coords points="945,2907 945,3293 276,3293 276,2907"/>
+	<TextEquiv>
+	<Unicode>Je bez diskusí, že automaty jsou riziko-
+vější pro tvorbu závislosti než sportovní
+sázky a loterie. Rozdíl by tam tedy měl
+být, ale jestli má být dvanáctiprocentní,
+tot otázka. Nálada ve společnosti a ve sně—
+movně prostě taková je. .. Samozřejmě, že
+vysoká sazba má svá velká rizika v růstu
+nelegálního hazardu. Sazby by měly být</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r14" type="paragraph">
+	<Coords points="463,3348 463,3382 256,3382 256,3348"/>
+	<TextEquiv>
+	<Unicode>EEEIIss</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r15" type="paragraph">
+	<Coords points="501,3489 501,3576 87,3576 87,3489"/>
+	<TextEquiv>
+	<Unicode>\ , 25_56_58_TlPSpon.indd 58</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r16" type="paragraph">
+	<Coords points="1609,1233 1609,1293 1019,1293 1019,1233"/>
+	<TextEquiv>
+	<Unicode>JAK VĚŘÍTE NAŠIM? „* ,</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r17" type="paragraph">
+	<Coords points="1520,1274 1520,1397 1020,1397 1020,1274"/>
+	<TextEquiv>
+	<Unicode>Čeští fotbalisté nepatří na Euru
+mezi favority. Postup ze skupiny se
+u Tipsportu pohybuje kolem 2 : 1.</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r18" type="paragraph">
+	<Coords points="1673,1457 1673,1593 1006,1593 1006,1457"/>
+	<TextEquiv>
+	<Unicode>stanoveny vyváženě, na základě analýz.
+Mně na tom nejvíce vadí, že se určití lidě
+podívají z okna a prostě sazby stanoví.</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r19" type="paragraph">
+	<Coords points="1672,1657 1672,1843 1006,1843 1006,1657"/>
+	<TextEquiv>
+	<Unicode>Insideři mi přesto říkají: Hazardní zákon je zlo-
+bovaný a vítězové jsou české sázkovky a loterie.
+Počkejte, proč si to myslíte? Vy si mys-
+líte, že 23 procent je málo?</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r20" type="paragraph">
+	<Coords points="1673,1907 1673,2185 1005,2185 1005,1907"/>
+	<TextEquiv>
+	<Unicode>Ne, to je jiná věc. lá celkově ten zákon vidím
+jako hloupý a ještě hloupěji napsaný. Ale jde
+mi o to, že jste dokázali snížit původní navrho-
+vaná procenta. Máte o dvě méně, což je výrazný
+úspěch, zatímco tvrdý hazard dostal to, co bylo
+navrženo.</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r21" type="paragraph">
+	<Coords points="1673,2206 1673,2792 1006,2792 1006,2206"/>
+	<TextEquiv>
+	<Unicode>To ale Babiš mohl navrhnout nejdříve
+klidně čtyřicet procent a pak říct: Dobře
+tedy, třicet, radujte se! Mně ta sazba fakt
+nepřijde nízká! Je třeba si uvědomit, že to
+není daň ze zisku, ale z marže, což je ob—
+rovský rozdíl. My jsme za nižší sazbu sa—
+mozřejmě lobbovali, osobně to Babišovi
+říkali, ukazovali studie, jake jsou sazby
+ve světě. Bez úspěchu. Naším cílem bylo
+zůstat na dvaceti procentech, to je evrop—
+sky vyvážená sazba. My jsme hazardní
+zákon opravdu nevyhráli.</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r22" type="paragraph">
+	<Coords points="1672,2857 1672,3135 1004,3135 1004,2857"/>
+	<TextEquiv>
+	<Unicode>A co tolik zmiňovaná blokace internetu? Zahra-
+niční sázkovky mohou být bez povolení zabloko-
+vány. Přičemž podle kostrbatého znění zákona
+k tomu stačí byť náznak, třeba na ostatních
+serverech, ve formě reklamy. Zapáchá to cenzu-
+rou internetu.</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r23" type="paragraph">
+	<Coords points="1672,3157 1672,3293 1005,3293 1005,3157"/>
+	<TextEquiv>
+	<Unicode>Je to bouře ve sklenici vody. Vy se
+opravdu bojíte toho, že toho minister—
+stvo zneužije?</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r24" type="caption">
+	<Coords points="2308,1175 2308,1302 1686,1302 1686,1175"/>
+	<TextEquiv>
+	<Unicode>.rt—„_ ,</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r25" type="paragraph">
+	<Coords points="2143,1291 2143,1325 2058,1325 2058,1291"/>
+	<TextEquiv>
+	<Unicode>** „kk,</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r26" type="paragraph">
+	<Coords points="2400,1456 2400,1693 1732,1693 1732,1456"/>
+	<TextEquiv>
+	<Unicode>Ten zákon je špatně napsaný. Nebo ne?
+() blokacích navíc rozhodují úředníci minis-
+terstva financí.
+O 90 procentech vašeho života rozho—
+dují úředníci!</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r27" type="paragraph">
+	<Coords points="2401,1756 2401,1893 1732,1893 1732,1756"/>
+	<TextEquiv>
+	<Unicode>Ale toje strašné, ne?
+Myslíte si, že kdyby o tom rozhodoval
+soud, že by rozhodl jinak?</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r28" type="paragraph">
+	<Coords points="2402,1957 2402,2191 1733,2191 1733,1957"/>
+	<TextEquiv>
+	<Unicode>Minimálně bych čekal, doufal, že soud bude
+nezávislejší a objektivnější než politicky
+a mocensky zařazení úředníci ministerstva
+v čele s Andrejem Babišem. Vždyť je to snad-
+ný nástroj pro mstu, šikanu...</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r29" type="paragraph">
+	<Coords points="2401,2206 2401,2643 1733,2643 1733,2206"/>
+	<TextEquiv>
+	<Unicode>Souhlasím stím, že blokace musí být dě—
+laná dobře, a opravdu nevěřím tomu, že
+by jí někdo zneužíval tak, jak se píše. Mys—
+lím, že principálně je to prostě správně.
+Samozřejmě, nehádám se, jestli to je na—
+psané ideálně, nebo ne. Praxe ukáže.
+A pokud se prokáže, že ta formulace je
+nedokonalá, nechť se změní. Ale základ
+je správný.</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r30" type="paragraph">
+	<Coords points="2403,2707 2403,2791 1734,2791 1734,2707"/>
+	<TextEquiv>
+	<Unicode>Přesto vás čeká náročná doba. Není ideální
+čas Tipsport prodat?</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r31" type="paragraph">
+	<Coords points="2401,2807 2401,3235 1734,3235 1734,2807"/>
+	<TextEquiv>
+	<Unicode>Za těch 25 let bylo takových okamžiků
+více, ktere se tvářily jako ideální doba
+na prodej. A nabídek byla spousta. Ni—
+kdy jsme na ně nekývli a opravdu neli—
+tujeme. Věřím, že to tak bude i v tomto
+případě. Nikdo z nás si prodej reálně ne—
+dokáže představit. Máme k Tipsportu
+vztah vpravdě mateřský. Je to práce i ra—
+dost zároveň.</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r32" type="paragraph">
+	<Coords points="2401,3264 2401,3284 2191,3284 2191,3264"/>
+	<TextEquiv>
+	<Unicode>Jakub Kvasnička !</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r33" type="paragraph">
+	<Coords points="2603,3489 2603,3576 2358,3576 2358,3489"/>
+	<TextEquiv>
+	<Unicode>10.06.16 21:55 \ \</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r34" type="paragraph">
+	<Coords points="2454,359 2454,825 2429,825 2429,359"/>
+	<TextEquiv>
+	<Unicode>Foto: 1 Karel Šanda, 2 David Taneček/CTK</Unicode></TextEquiv></TextRegion></Page></PcGts>

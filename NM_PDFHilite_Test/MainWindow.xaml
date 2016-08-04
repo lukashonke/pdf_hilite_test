@@ -11,9 +11,11 @@
                 </MenuItem>
                 <MenuItem Header="Edit">
                     <MenuItem Header="PDF Parser">
+                        <MenuItem Name="RunAll" IsCheckable="True" IsChecked="False" Header="Run All parsers" Click="RunAll_Click" HorizontalAlignment="Left" Width="200"/>
                         <MenuItem Name="Parser1" IsCheckable="True" IsChecked="True" Header="PDFClown" Click="PDFClown_Click" HorizontalAlignment="Left" Width="170"/>
                         <MenuItem Name="Parser2" IsCheckable="True" IsChecked="False" Header="PDFBox (TODO)" Click="PDFBox_Click" HorizontalAlignment="Left" Width="170"/>
                         <MenuItem Name="Tesseract" IsCheckable="True" IsChecked="False" Header="Tesseract OCR" Click="Tesseract_Click" HorizontalAlignment="Left" Width="170"/>
+                        <MenuItem Name="Prima" IsCheckable="True" IsChecked="False" Header="Prima" Click="Prima_Click" HorizontalAlignment="Left" Width="170"/>
                     </MenuItem>
                     <MenuItem Name="ShowMetadata" IsCheckable="True" IsChecked="False" Header="Show Metadata" Click="ShowMetadata_Click" HorizontalAlignment="Left" Width="200"/>
                     <MenuItem Name="ConvertPDF" IsCheckable="True" IsChecked="False" Header="Convert to img" Click="ConvertPdf_Click" HorizontalAlignment="Left" Width="200"/>
@@ -34,7 +36,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="10"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
             <GridSplitter Grid.Column="1" ShowsPreview="True" VerticalAlignment="Stretch" HorizontalAlignment="Center" Width="10"/>
@@ -43,11 +45,33 @@
 
                 <Label Name="FileNameLabel" Content="{Binding FileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Name="PathLabel" Content="{Binding Path, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                
+                <Label Content="Metadata"/>
                 <TextBox Name="Metadata" Text="{Binding Parameters, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Grid.Column="2"/>
                 
+                <Label Content="Words to highlight (each string on new line):"/>
+                <TextBox Name="WordsToHighlight" TextWrapping="Wrap" AcceptsReturn="True" BorderBrush="Gray" Height="Auto" MinHeight="150"/>
+
             </StackPanel>
 
-            <TextBox Name="ProgramOutput" Text="{Binding Text}" Grid.Column="2"/>
+            <TabControl Grid.Column="2">
+                <TabItem Header="PDFReader">
+                    <TextBox Name="MainOutput" TextWrapping="Wrap"/>
+                </TabItem>
+                <TabItem Header="PDFReader-Raw text">
+                    <TextBox Name="RawTextOutput" TextWrapping="Wrap"/>
+                </TabItem>
+                <TabItem Header="OCR-Raw text">
+                    <TextBox Name="OCROutput" TextWrapping="Wrap"/>
+                </TabItem>
+                <TabItem Header="HOCR">
+                    <TextBox Name="HOCROutput" TextWrapping="Wrap"/>
+                </TabItem>
+                <TabItem Header="PRIMA">
+                    <TextBox Name="PRIMAOutput" TextWrapping="Wrap"/>
+                </TabItem>
+            </TabControl>
+
         </Grid>
 
         <Grid.RowDefinitions>

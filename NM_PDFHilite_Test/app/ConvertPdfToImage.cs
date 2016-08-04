@@ -42,15 +42,14 @@ namespace NM_PDFHilite_Test.app
 
 					foreach (MagickImage image in images)
 					{
-						// Write page to file that contains the page number
-						image.Write("OutputImages/" + CurrentDocumentInfo.FileName + ".Page" + page + ".png");
-
 						if (Settings.USE_TIF_FORMAT)
 						{
 							// Writing to a specific format works the same as for a single image
 							image.Format = MagickFormat.Ptif;
 							image.Write("OutputImages/" + CurrentDocumentInfo.FileName + ".Page" + page + ".tif");
 						}
+						else
+							image.Write("OutputImages/" + CurrentDocumentInfo.FileName + ".Page" + page + ".png");
 
 						page++;
 					}

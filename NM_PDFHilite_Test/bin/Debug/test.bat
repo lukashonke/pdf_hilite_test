@@ -1,0 +1,2 @@
+"C:/NewtonMedia/PRIMA/tess-exporter/extractor.exe" -extract imageSnippets -image ./OutputImages\out.png -page-content ./OutputImages\out.xml -filter-by type -filter text -output-folder ./OutputImages/parsed
+pause
