@@ -94,18 +94,18 @@ namespace NM_PDFHilite_Test
 		{
 			BackgroundWorker worker = (BackgroundWorker) sender;
 
-			status = "Creating image from PDF";
-			worker.ReportProgress(0);
-
 			if (convertToImg || selectedType == ParserType.Tesseract || selectedType == ParserType.Prima)
 			{
+				status = "Creating images from PDF";
+				worker.ReportProgress(0);
+
 				ConvertPdfToImage conv = new ConvertPdfToImage(currentFile);
 				conv.Process();
 			}
 
 			if (showMetadata)
 			{
-				status = "Creating metadata";
+				status = "Reading metadata";
 				worker.ReportProgress(25);
 
 				MetadataReader meta = new MetadataReader(currentFile);
