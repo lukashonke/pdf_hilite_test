@@ -13,12 +13,15 @@ namespace NM_PDFHilite_Test.app
 {
 	/// <summary>
 	/// zvyrazneni na danem miste v dokumentu
+	/// TODO: pridat podporu pro zvyrazneni slovosledu
 	/// </summary>
 	public class PdfHighlight_Position : PdfReader
 	{
-		private List<OCRWordData> wordsToHighlight; 
-		public PdfHighlight_Position(PdfDocumentInfo doc, List<OCRWordData> wordsToHighlight) : base(doc)
+		private List<OCRWordData> wordsData;
+		private List<string> wordsToHighlight; 
+		public PdfHighlight_Position(PdfDocumentInfo doc, List<OCRWordData> wordsData, List<string> wordsToHighlight) : base(doc)
 		{
+			this.wordsData = wordsData;
 			this.wordsToHighlight = wordsToHighlight;
 		}
 
@@ -37,19 +40,22 @@ namespace NM_PDFHilite_Test.app
 			// [x:66,y:436,w:500,h:29]
 			// 300 DPI
 
-			foreach (OCRWordData wordData in wordsToHighlight)
+			foreach (OCRWordData wordData in wordsData)
 			{
-				RectangleF rect = Utils.RecalculatePosition(documentWidth, documentHeight, wordData.WordPosition.SourceWidth, wordData.WordPosition.SourceHeight, wordData.WordPosition.X1,
+				if (wordsToHighlight == null || wordsToHighlight.Contains(wordData.Word))
+				{
+					RectangleF rect = Utils.RecalculatePosition(documentWidth, documentHeight, wordData.WordPosition.SourceWidth, wordData.WordPosition.SourceHeight, wordData.WordPosition.X1,
 					wordData.WordPosition.Y1, wordData.WordPosition.X2, wordData.WordPosition.Y2);
 
-				Quad quad = Quad.Get(rect);
+					Quad quad = Quad.Get(rect);
 
-				quads.Add(quad);
+					quads.Add(quad);
 
-				new TextMarkup(page, quads, null, TextMarkup.MarkupTypeEnum.Highlight);
+					new TextMarkup(page, quads, null, TextMarkup.MarkupTypeEnum.Highlight);
+				}
 			}
 
-			pdfFile.Save(pdfFile.Path + "pos_highlighted.pdf", SerializationModeEnum.Incremental);
+			pdfFile.Save(pdfFile.Path + "_pos_highlighted.pdf", SerializationModeEnum.Incremental);
 		}
 	}
 

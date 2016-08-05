@@ -81,7 +81,7 @@ namespace NM_PDFHilite_Test.app
 
 									foreach (OCRWordData word in data)
 									{
-										ocrOutput += word.Word + " [" + word.WordPosition.X1 + ";" + word.WordPosition.Y1 + ";" + word.WordPosition.X2 + ";" + word.WordPosition.Y2 + "]\n";
+										ocrOutput += word.Word + "[" + word.WordPosition.X1 + ";" + word.WordPosition.Y1 + ";" + word.WordPosition.X2 + ";" + word.WordPosition.Y2 + "]\n";
 									}
 								}
 							}
@@ -139,33 +139,38 @@ namespace NM_PDFHilite_Test.app
 			{
 				iter.Begin();
 
-				/*while (iter.Next(PageIteratorLevel.Block))
+				Rect bounds;
+				if (iter.TryGetBoundingBox(PageIteratorLevel.Word, out bounds))
 				{
-					while (iter.Next(PageIteratorLevel.Para))
+					string text = iter.GetText(PageIteratorLevel.Word);
+					if (text.Length != 0 && !text.Equals(" "))
 					{
-						while (iter.Next(PageIteratorLevel.TextLine))
-						{*/
-							while (iter.Next(PageIteratorLevel.Word))
-							{
-								if (iter.IsAtBeginningOf(PageIteratorLevel.Word))
-								{
-									float confidence = iter.GetConfidence(PageIteratorLevel.Word) / 100;
-
-									Rect bounds;
-									if (iter.TryGetBoundingBox(PageIteratorLevel.Word, out bounds))
-									{
-										OCRWordData word = new OCRWordData(new WordPos(bounds.X1, bounds.Y1, bounds.X2, bounds.Y2, sourceWidth, sourceHeight), iter.GetText(PageIteratorLevel.Word));
-										data.Add(word);
-									}
-									else
-									{
-										MessageBox.Show("cant find bounds for word " + iter.GetText(PageIteratorLevel.Word));
-									}
-								}
-							}
-						/*}
+						OCRWordData word = new OCRWordData(new WordPos(bounds.X1, bounds.Y1, bounds.X2, bounds.Y2, sourceWidth, sourceHeight), text);
+						data.Add(word);
 					}
-				}*/
+				}
+
+				while (iter.Next(PageIteratorLevel.Word))
+				{
+					if (iter.IsAtBeginningOf(PageIteratorLevel.Word))
+					{
+						float confidence = iter.GetConfidence(PageIteratorLevel.Word) / 100;
+
+						if (iter.TryGetBoundingBox(PageIteratorLevel.Word, out bounds))
+						{
+							string text = iter.GetText(PageIteratorLevel.Word);
+							if (text.Length == 0 || text.Equals(" "))
+								continue;		
+
+							OCRWordData word = new OCRWordData(new WordPos(bounds.X1, bounds.Y1, bounds.X2, bounds.Y2, sourceWidth, sourceHeight), text);
+							data.Add(word);
+						}
+						else
+						{
+							MessageBox.Show("cant find bounds for word " + iter.GetText(PageIteratorLevel.Word));
+						}
+					}
+				}
 			}
 			return data;
 		}

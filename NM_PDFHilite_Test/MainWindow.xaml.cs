@@ -35,12 +35,15 @@ namespace NM_PDFHilite_Test
 		// convert to image (forced true when OCRing)
 		public bool convertToImg;
 
+		public bool highAllWords;
+
 		// whats going on atm
 		private string status;
 
 		private List<string> wordsToHighlight;
 		private string mainOutput, ocrOutput, hocrOutput, rawTextOutput, primaOutput, highlightOutput;
-		private List<OCRWordData> ocrWords; 
+		private List<OCRWordData> ocrWords;
+
 
 		public MainWindow()
 		{
@@ -54,7 +57,8 @@ namespace NM_PDFHilite_Test
 
 			this.showMetadata = ShowMetadata.IsChecked;
 			this.convertToImg = ConvertPDF.IsChecked;
-			
+			this.highAllWords = HighlightAllOCR.IsChecked;
+
 			Settings.USE_TIF_FORMAT = TifFormat.IsChecked;
 
 			selectedType = ParserType.PDFClown;
@@ -97,7 +101,7 @@ namespace NM_PDFHilite_Test
 
 			BackgroundWorker worker = (BackgroundWorker) sender;
 
-			if (convertToImg || selectedType == ParserType.Tesseract || selectedType == ParserType.Prima)
+			if (convertToImg || selectedType == ParserType.Tesseract || selectedType == ParserType.Prima || selectedType == ParserType.All)
 			{
 				status = "Creating images from PDF";
 				worker.ReportProgress(0);
@@ -137,6 +141,13 @@ namespace NM_PDFHilite_Test
 			status = "Highlighting words...";
 			worker.ReportProgress(75);
 
+			// highlight all words for debug
+			if (highAllWords && ocrWords != null)
+			{
+				PdfHighlight_Position ph = new PdfHighlight_Position(currentFile, ocrWords, null);
+				ph.Process();
+			}
+
 			if (wordsToHighlight.Count > 0)
 			{
 				PdfHighlight_Clown highlight = new PdfHighlight_Clown(currentFile, wordsToHighlight);
@@ -146,7 +157,7 @@ namespace NM_PDFHilite_Test
 
 				if (ocrWords != null)
 				{
-					PdfHighlight_Position ph = new PdfHighlight_Position(currentFile, ocrWords);
+					PdfHighlight_Position ph = new PdfHighlight_Position(currentFile, ocrWords, wordsToHighlight);
 					ph.Process();
 				}
 			}
@@ -188,7 +199,15 @@ namespace NM_PDFHilite_Test
 				case ParserType.Prima:
 
 					reader = new PrimaProcessor(currentFile);
-					reader.Process();
+
+					try
+					{
+						reader.Process();
+					}
+					catch (Exception e)
+					{
+						MessageBox.Show("error while running Prima\n" + e);						
+					}
 
 					primaOutput = reader.Output;
 
@@ -301,6 +320,11 @@ namespace NM_PDFHilite_Test
 		private void TifFormat_Click(object sender, RoutedEventArgs e)
 		{
 			Settings.USE_TIF_FORMAT = TifFormat.IsChecked;
+		}
+
+		private void HighlightAll_Click(object sender, RoutedEventArgs e)
+		{
+			highAllWords = HighlightAllOCR.IsChecked;
 		}
 	}
 

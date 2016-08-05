@@ -17,9 +17,10 @@
                         <MenuItem Name="Tesseract" IsCheckable="True" IsChecked="False" Header="Tesseract OCR" Click="Tesseract_Click" HorizontalAlignment="Left" Width="170"/>
                         <MenuItem Name="Prima" IsCheckable="True" IsChecked="False" Header="Prima" Click="Prima_Click" HorizontalAlignment="Left" Width="170"/>
                     </MenuItem>
-                    <MenuItem Name="ShowMetadata" IsCheckable="True" IsChecked="False" Header="Show Metadata" Click="ShowMetadata_Click" HorizontalAlignment="Left" Width="200"/>
-                    <MenuItem Name="ConvertPDF" IsCheckable="True" IsChecked="False" Header="Convert to img" Click="ConvertPdf_Click" HorizontalAlignment="Left" Width="200"/>
-                    <MenuItem Name="TifFormat" IsCheckable="True" IsChecked="False" Header="Use .tif format" Click="TifFormat_Click" HorizontalAlignment="Left" Width="200"/>
+                    <MenuItem Name="ShowMetadata" IsCheckable="True" IsChecked="False" Header="Show Metadata" Click="ShowMetadata_Click" HorizontalAlignment="Left" Width="auto"/>
+                    <MenuItem Name="ConvertPDF" IsCheckable="True" IsChecked="False" Header="Convert to img" Click="ConvertPdf_Click" HorizontalAlignment="Left" Width="auto"/>
+                    <MenuItem Name="TifFormat" IsCheckable="True" IsChecked="False" Header="Use .tif format" Click="TifFormat_Click" HorizontalAlignment="Left" Width="auto"/>
+                    <MenuItem Name="HighlightAllOCR" IsCheckable="True" IsChecked="False" Header="Highlight all OCR words" Click="HighlightAll_Click" HorizontalAlignment="Left" Width="auto"/>
                 </MenuItem>
                 <MenuItem Header="Help"/>
             </Menu>
