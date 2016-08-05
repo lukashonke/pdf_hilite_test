@@ -33,8 +33,20 @@ namespace NM_PDFHilite_Test.app
 
 			IList<Quad> quads = new List<Quad>();
 
-			int documentWidth = pdfFile.Document.PageSize.Value.Width;
-			int documentHeight = pdfFile.Document.PageSize.Value.Height;
+			int documentWidth;
+			int documentHeight;
+
+			try
+			{
+				documentWidth = pdfFile.Document.PageSize.Value.Width;
+				documentHeight = pdfFile.Document.PageSize.Value.Height;
+			}
+			catch (Exception)
+			{
+				//612 by 792
+				documentWidth = 612;
+				documentHeight = 792;
+			}
 
 			// 1929 1819 2353 1918
 			// [x:66,y:436,w:500,h:29]
