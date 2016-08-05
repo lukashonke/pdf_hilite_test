@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using org.pdfclown.documents;
 using org.pdfclown.documents.interaction.annotations;
 using org.pdfclown.files;
@@ -19,6 +20,11 @@ namespace NM_PDFHilite_Test.app
 	{
 		private List<OCRWordData> wordsData;
 		private List<string> wordsToHighlight; 
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="wordsToHighlight">null to highlight all words that were recognized by OCR</param>
 		public PdfHighlight_Position(PdfDocumentInfo doc, List<OCRWordData> wordsData, List<string> wordsToHighlight) : base(doc)
 		{
 			this.wordsData = wordsData;
@@ -29,41 +35,44 @@ namespace NM_PDFHilite_Test.app
 		{
 			File pdfFile = new File(CurrentDocumentInfo.Path);
 
-			Page page = pdfFile.Document.Pages[0];
-
-			IList<Quad> quads = new List<Quad>();
-
-			int documentWidth;
-			int documentHeight;
-
-			try
+			foreach (Page page in pdfFile.Document.Pages)
 			{
-				documentWidth = pdfFile.Document.PageSize.Value.Width;
-				documentHeight = pdfFile.Document.PageSize.Value.Height;
-			}
-			catch (Exception)
-			{
-				//612 by 792
-				documentWidth = 612;
-				documentHeight = 792;
-			}
+				IList<Quad> quads = new List<Quad>();
 
-			// 1929 1819 2353 1918
-			// [x:66,y:436,w:500,h:29]
-			// 300 DPI
+				int documentWidth;
+				int documentHeight;
 
-			foreach (OCRWordData wordData in wordsData)
-			{
-				if (wordsToHighlight == null || wordsToHighlight.Contains(wordData.Word))
+				try
 				{
-					RectangleF rect = Utils.RecalculatePosition(documentWidth, documentHeight, wordData.WordPosition.SourceWidth, wordData.WordPosition.SourceHeight, wordData.WordPosition.X1,
-					wordData.WordPosition.Y1, wordData.WordPosition.X2, wordData.WordPosition.Y2);
+					documentWidth = (int)page.Size.Width;
+					documentHeight = (int)page.Size.Height;
 
-					Quad quad = Quad.Get(rect);
+					//documentWidth = pdfFile.Document.PageSize.Value.Width;
+					//documentHeight = pdfFile.Document.PageSize.Value.Height;
+				}
+				catch (Exception e)
+				{
+					MessageBox.Show("cannot determine size of the PDF document!\n" + e);
+					return;
+				}
 
-					quads.Add(quad);
+				// 1929 1819 2353 1918
+				// [x:66,y:436,w:500,h:29]
+				// 300 DPI
 
-					new TextMarkup(page, quads, null, TextMarkup.MarkupTypeEnum.Highlight);
+				foreach (OCRWordData wordData in wordsData)
+				{
+					if (wordsToHighlight == null || wordsToHighlight.Contains(wordData.Word))
+					{
+						RectangleF rect = Utils.RecalculatePosition(documentWidth, documentHeight, wordData.WordPosition.SourceWidth, wordData.WordPosition.SourceHeight, wordData.WordPosition.X1,
+						wordData.WordPosition.Y1, wordData.WordPosition.X2, wordData.WordPosition.Y2);
+
+						Quad quad = Quad.Get(rect);
+
+						quads.Add(quad);
+
+						new TextMarkup(page, quads, null, TextMarkup.MarkupTypeEnum.Highlight);
+					}
 				}
 			}
 
