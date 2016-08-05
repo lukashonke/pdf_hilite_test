@@ -40,6 +40,7 @@ namespace NM_PDFHilite_Test
 
 		private List<string> wordsToHighlight;
 		private string mainOutput, ocrOutput, hocrOutput, rawTextOutput, primaOutput, highlightOutput;
+		private List<OCRWordData> ocrWords; 
 
 		public MainWindow()
 		{
@@ -92,10 +93,9 @@ namespace NM_PDFHilite_Test
 
 		private void Worker_DoWork(object sender, DoWorkEventArgs e)
 		{
-			BackgroundWorker worker = (BackgroundWorker) sender;
+			ocrWords = null;
 
-			PdfHighlight_Position ph = new PdfHighlight_Position(currentFile);
-			ph.Process();
+			BackgroundWorker worker = (BackgroundWorker) sender;
 
 			if (convertToImg || selectedType == ParserType.Tesseract || selectedType == ParserType.Prima)
 			{
@@ -143,6 +143,12 @@ namespace NM_PDFHilite_Test
 				highlight.Process();
 
 				highlightOutput = highlight.Output;
+
+				if (ocrWords != null)
+				{
+					PdfHighlight_Position ph = new PdfHighlight_Position(currentFile, ocrWords);
+					ph.Process();
+				}
 			}
 
 			status = "Done";
@@ -176,6 +182,7 @@ namespace NM_PDFHilite_Test
 
 					ocrOutput = ((TesseractOCRReader)reader).OcrOutput;
 					hocrOutput = ((TesseractOCRReader)reader).HocrOutput;
+					ocrWords = ((TesseractOCRReader) reader).WordData;
 
 					break;
 				case ParserType.Prima:

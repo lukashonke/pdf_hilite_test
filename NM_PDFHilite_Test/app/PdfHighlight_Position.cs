@@ -16,8 +16,8 @@ namespace NM_PDFHilite_Test.app
 	/// </summary>
 	public class PdfHighlight_Position : PdfReader
 	{
-		private List<WordPos> wordsToHighlight; 
-		public PdfHighlight_Position(PdfDocumentInfo doc, List<WordPos> wordsToHighlight) : base(doc)
+		private List<OCRWordData> wordsToHighlight; 
+		public PdfHighlight_Position(PdfDocumentInfo doc, List<OCRWordData> wordsToHighlight) : base(doc)
 		{
 			this.wordsToHighlight = wordsToHighlight;
 		}
@@ -37,10 +37,10 @@ namespace NM_PDFHilite_Test.app
 			// [x:66,y:436,w:500,h:29]
 			// 300 DPI
 
-			foreach (WordPos wordData in wordsToHighlight)
+			foreach (OCRWordData wordData in wordsToHighlight)
 			{
-				RectangleF rect = Utils.RecalculatePosition(documentWidth, documentHeight, wordData.SourceWidth, wordData.SourceHeight, wordData.X1,
-					wordData.Y1, wordData.X2, wordData.Y2);
+				RectangleF rect = Utils.RecalculatePosition(documentWidth, documentHeight, wordData.WordPosition.SourceWidth, wordData.WordPosition.SourceHeight, wordData.WordPosition.X1,
+					wordData.WordPosition.Y1, wordData.WordPosition.X2, wordData.WordPosition.Y2);
 
 				Quad quad = Quad.Get(rect);
 
