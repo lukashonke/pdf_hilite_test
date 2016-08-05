@@ -61,6 +61,9 @@
                 <TabItem Header="PDFReader-Raw text">
                     <TextBox Name="RawTextOutput" TextWrapping="Wrap"/>
                 </TabItem>
+                <TabItem Header="Highlighter">
+                    <TextBox Name="HighlightOutput" TextWrapping="Wrap"/>
+                </TabItem>
                 <TabItem Header="OCR-Raw text">
                     <TextBox Name="OCROutput" TextWrapping="Wrap"/>
                 </TabItem>

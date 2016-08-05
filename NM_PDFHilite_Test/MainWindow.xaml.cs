@@ -39,7 +39,7 @@ namespace NM_PDFHilite_Test
 		private string status;
 
 		private List<string> wordsToHighlight;
-		private string mainOutput, ocrOutput, hocrOutput, rawTextOutput, primaOutput;
+		private string mainOutput, ocrOutput, hocrOutput, rawTextOutput, primaOutput, highlightOutput;
 
 		public MainWindow()
 		{
@@ -94,6 +94,9 @@ namespace NM_PDFHilite_Test
 		{
 			BackgroundWorker worker = (BackgroundWorker) sender;
 
+			PdfHighlight_Position ph = new PdfHighlight_Position(currentFile);
+			ph.Process();
+
 			if (convertToImg || selectedType == ParserType.Tesseract || selectedType == ParserType.Prima)
 			{
 				status = "Creating images from PDF";
@@ -136,8 +139,10 @@ namespace NM_PDFHilite_Test
 
 			if (wordsToHighlight.Count > 0)
 			{
-				PdfHighlight highlight = new PdfHighlight(currentFile, wordsToHighlight);
+				PdfHighlight_Clown highlight = new PdfHighlight_Clown(currentFile, wordsToHighlight);
 				highlight.Process();
+
+				highlightOutput = highlight.Output;
 			}
 
 			status = "Done";
@@ -195,6 +200,7 @@ namespace NM_PDFHilite_Test
 			HOCROutput.Text = this.hocrOutput;
 			RawTextOutput.Text = this.rawTextOutput;
 			PRIMAOutput.Text = this.primaOutput;
+			HighlightOutput.Text = this.highlightOutput;
 		}
 
 		private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)

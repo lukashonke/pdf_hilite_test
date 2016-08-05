@@ -2,268 +2,210 @@
 <PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15/pagecontent.xsd">
 	<Metadata>
 	<Creator></Creator>
-	<Created>2016-08-04T17:43:34</Created>
-	<LastChange>2016-08-04T17:43:34</LastChange></Metadata>
-	<Page imageFilename="OutputImages/AH15051116C1.pdf.Page1.png" imageWidth="3390" imageHeight="4902">
+	<Created>2016-08-05T02:01:52</Created>
+	<LastChange>2016-08-05T02:01:52</LastChange></Metadata>
+	<Page imageFilename="OutputImages/24_005.pdf.Page1.png" imageWidth="2691" imageHeight="3577">
 	<SeparatorRegion id="r1">
-	<Coords points="836,603 836,604 167,604 167,603"/></SeparatorRegion>
+	<Coords points="1015,217 1561,217"/></SeparatorRegion>
 	<ImageRegion id="r2">
-	<Coords points="3228,144 3228,785 2807,785 2807,144"/></ImageRegion>
+	<Coords points="2484,212 2484,1407 889,1407 889,212"/></ImageRegion>
 	<ImageRegion id="r3">
-	<Coords points="3343,148 3343,4054 113,4054 113,148"/></ImageRegion>
+	<Coords points="973,2051 973,3312 199,3312 199,2051"/></ImageRegion>
 	<ImageRegion id="r4">
-	<Coords points="2779,1509 2779,1551 1586,1551 1586,1509"/></ImageRegion>
+	<Coords points="2425,2502 2425,2641 1750,2641 1750,2502"/></ImageRegion>
 	<ImageRegion id="r5">
-	<Coords points="2779,1754 2779,1934 1917,1934 1917,1754"/></ImageRegion>
-	<ImageRegion id="r6">
-	<Coords points="2534,1768 2534,1930 1917,1930 1917,1768"/></ImageRegion>
-	<ImageRegion id="r7">
-	<Coords points="1598,2025 1598,2070 114,2070 114,2025"/></ImageRegion>
-	<ImageRegion id="r8">
-	<Coords points="2860,2113 2860,2197 1331,2197 1331,2113"/></ImageRegion>
-	<ImageRegion id="r9">
-	<Coords points="2950,2122 2950,2326 1350,2326 1350,2122"/></ImageRegion>
-	<TableRegion id="r10">
-	<Coords points="3223,2083 3223,2289 149,2289 149,2083"/></TableRegion>
-	<ImageRegion id="r11">
-	<Coords points="2463,2244 2463,2422 1351,2422 1351,2244"/></ImageRegion>
-	<ImageRegion id="r12">
-	<Coords points="3110,2322 3110,2644 2890,2644 2890,2322"/></ImageRegion>
-	<ImageRegion id="r13">
-	<Coords points="658,3484 658,3528 114,3528 114,3484"/></ImageRegion>
-	<ImageRegion id="r14">
-	<Coords points="817,3630 817,3807 114,3807 114,3630"/></ImageRegion>
-	<ImageRegion id="r15">
-	<Coords points="817,3638 817,3813 114,3813 114,3638"/></ImageRegion>
-	<ImageRegion id="r16">
-	<Coords points="3337,3978 3337,4229 121,4229 121,3978"/></ImageRegion>
-	<ImageRegion id="r17">
-	<Coords points="3224,4230 3224,4727 1023,4727 1023,4230"/></ImageRegion>
+	<Coords points="2452,2685 2452,3311 1749,3311 1749,2685"/></ImageRegion>
+	<TextRegion id="r6" type="paragraph">
+	<Coords points="598,258 598,279 223,279 223,258"/>
+	<TextEquiv>
+	<Unicode>SPECIÁLNÍ PROJEKT KlKA</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r7" type="paragraph">
+	<Coords points="838,375 838,652 293,652 293,375"/>
+	<TextEquiv>
+	<Unicode>Slunečné a teplé počasí si
+nejlépe vychutnáme v pří-
+rodě. Venku nám nejen
+lépe chutná, ale také si
+tam skvěle odpočineme</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r8" type="paragraph">
+	<Coords points="837,663 837,942 276,942 276,663"/>
+	<TextEquiv>
+	<Unicode>— ať už aktivním sportem,
+nebo při posezení s přáteli.
+Příjemné místo pro relax
+vykouzlíte snadno jak na
+zahradě, tak i na terase</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r9" type="paragraph">
+	<Coords points="838,958 838,1227 298,1227 298,958"/>
+	<TextEquiv>
+	<Unicode>a balkonu. Postačí pár
+chytře zvolených kusů ná-
+bytku. Inspirací naleznete
+například v obchodních
+domech KlKA a KlKA CITK</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r10" type="paragraph">
+	<Coords points="993,243 993,251 986,251 986,243"/>
+	<TextEquiv>
+	<Unicode>v</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r11" type="paragraph">
+	<Coords points="1008,268 1008,280 1005,280 1005,268"/>
+	<TextEquiv>
+	<Unicode>7</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r12" type="paragraph">
+	<Coords points="1370,31 1370,81 1320,81 1320,31"/>
+	<TextEquiv>
+	<Unicode>©</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r13" type="caption">
+	<Coords points="1525,243 1525,346 1038,346 1038,243"/>
+	<TextEquiv>
+	<Unicode>Trojnohé lehátko TIRAJANA
+hliníková kostra, stříbrná, textilní potah
+šedý, oranžový nebo modrý,</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r14" type="caption">
+	<Coords points="1575,361 1575,448 1372,448 1372,361"/>
+	<TextEquiv>
+	<Unicode>14.č</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r15" type="paragraph">
+	<Coords points="1339,351 1339,380 1038,380 1038,351"/>
+	<TextEquiv>
+	<Unicode>š/v/h: 186 &gt;&lt; 26 &gt;&lt; 53 cm.</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r16" type="heading">
+	<Coords points="2216,1451 2216,1615 276,1615 276,1451"/>
+	<TextEquiv>
+	<Unicode>POHODOVÉ LÉTO NA ZAHRADĚ</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r17" type="paragraph">
+	<Coords points="698,1681 698,1723 279,1723 279,1681"/>
+	<TextEquiv>
+	<Unicode>HOUPÁNÍ NÁS BAVÍ</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r18" type="paragraph">
-	<Coords points="963,170 963,534 136,534 136,170"/>
+	<Coords points="939,1742 939,2268 275,2268 275,1742"/>
 	<TextEquiv>
-	<Unicode>Q</Unicode></TextEquiv></TextRegion>
+	<Unicode>Chcete mít pohodu na lenošení a přitom jste
+milovníci designu? V takovém případě jsou
+tou správnou volbou stylová závěsná hou-
+pací křesla a lehátka. Dodají šmrnc každému
+prostoru a přitom jsou neuvěřitelně poho-
+dlná. Vzdušné tmavošedé křeslo Dewdrop
+svým tvarem kapky a polš-
+tářky v přírodní barvě do-
+konale osvěží každého mi-
+lovníka komfortu a přitom
+zaberejen minimum místa.
+(,</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r19" type="paragraph">
-	<Coords points="794,531 794,604 151,604 151,531"/>
+	<Coords points="498,2249 498,2265 490,2265 490,2249"/>
 	<TextEquiv>
-	<Unicode>[ www.ahaonline.cz</Unicode></TextEquiv></TextRegion>
+	<Unicode>l
+;</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r20" type="paragraph">
-	<Coords points="2867,681 2867,699 2865,699 2865,681"/>
+	<Coords points="913,2423 913,2845 587,2845 587,2423"/>
 	<TextEquiv>
-	<Unicode>i</Unicode></TextEquiv></TextRegion>
+	<Unicode>Houpací křeslo
+DEWDROP
+hliníková kostra, ošetře-
+no barvou šedou, zá-
+“ věsné křeslo, umělý
+výplet, barva šedá,
+včetně 2dílného
+setu polštářů
+polyester
+5 cm, barva
+přírodní, prů-
+měr: 96 cm,</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r21" type="paragraph">
-	<Coords points="3224,749 3224,1020 2809,1020 2809,749"/>
+	<Coords points="344,3509 344,3527 177,3527 177,3509"/>
 	<TextEquiv>
-	<Unicode>Glíorvati
-zatkli šéfa
-Liberlandu!</Unicode></TextEquiv></TextRegion>
+	<Unicode>inzeroejndd 2</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r22" type="paragraph">
-	<Coords points="3223,1051 3223,1352 2811,1352 2811,1051"/>
+	<Coords points="1571,1682 1571,1720 1016,1720 1016,1682"/>
 	<TextEquiv>
-	<Unicode>ZÁHŘEB (ČTK) _
-Plány Víta Jedličky (31)
-na vytvoření státu Liber-
-land na »území nikoho&lt;&lt;
-mezi Srbskem a Chor-
-vatskem dostaly pořád-
-nou ránu.</Unicode></TextEquiv></TextRegion>
+	<Unicode>VLEŽE SE PŘEMÝŠLÍ NEJLÉPE</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r23" type="paragraph">
-	<Coords points="3222,1369 3222,2073 2808,2073 2808,1369"/>
+	<Coords points="1683,1733 1683,2230 1016,2230 1016,1733"/>
 	<TextEquiv>
-	<Unicode>Chorvatská policie ho
-totiž v sobotu večer za-
-držela. Jedlička vyhlásil
-Liberland 13. dubna, ale
-v posledních dnech Chor-
-vatsko zostřilo kontrolu v
-jeho okolí, v oblasti nasa-
-dilo policejní hlídky i po-
-licejní čluny, aby zabráni-
-lo opakovaným pokusům
-desítek »Liberland'anů&lt;&lt; do
-neobydlené oblasti pronik-
-nout. Mluvčí českého mi-
-nisterstva zahraničí David
-Frous řekl, že jednotlivé
-konzulární případy úřad</Unicode></TextEquiv></TextRegion>
+	<Unicode>Číst si, opalovat se, přemýšlet nebo poslou-
+chat oblíbenou hudbu — v horkých letních
+dnech nám každá z těchto činností půjde
+nejlépe vleže. Snadno rozložitelné trojno-
+hé lehátko Tirajana oceníte nejen u babič-
+ky na zahradě či na koupališti, ale i kdekoli
+na cestách. Díky hliníkové konstrukci je le-
+houčké a veselé barvy potahů vám zaruče-
+ně zvednou náladu. V obchodních domech
+KlKA si vyberete to, které se vám bude líbit
+nejvíce.</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r24" type="paragraph">
-	<Coords points="191,676 191,775 144,775 144,676"/>
+	<Coords points="1683,2289 1683,2597 1015,2597 1015,2289"/>
 	<TextEquiv>
-	<Unicode>Reuters
-n</Unicode></TextEquiv></TextRegion>
+	<Unicode>Pro milovníky luxusu je ideální nádherná
+venkovní pohovka Aviles. Skládací střecha
+vás ochrání před dotěrným větrem i před
+příliš horkým sluníčkem. Prostorná plocha
+k ležení přímo vybízí k odpolednímu klidu
+pro vaše ratolesti nebo pro společné chvilky
+v nejužším rodinném kruhu.</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r25" type="paragraph">
-	<Coords points="172,788 172,901 144,901 144,788"/>
+	<Coords points="1506,2644 1506,2696 1019,2696 1019,2644"/>
 	<TextEquiv>
-	<Unicode>Foto ara,</Unicode></TextEquiv></TextRegion>
+	<Unicode>Ni) ČERSTVÉM VZDUCHU</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r26" type="paragraph">
-	<Coords points="2726,1532 2726,1736 1017,1736 1017,1532"/>
+	<Coords points="1296,2698 1296,2728 1019,2728 1019,2698"/>
 	<TextEquiv>
-	<Unicode>Kromě chmurných představ o se podařilo přeměnit ve zkumavce ny úspěšnými a bezpečnými, půjde
-nepotřebnosti mužů má ale silněj- základní mužské pohlavní buňky, o obrovský kšeft. Odhaduje se, že
-ší pohlaví samozřejmě i velký dů- zvané spermatogonia, ve sperma. Kallistem může mít TOČně až 50 000
-vod k radosti. Převratný objev totiž Zákazníků a trh V h0dn0tě neSkmeč'</Unicode></TextEquiv></TextRegion>
+	<Unicode>NAM CH UTNA</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r27" type="paragraph">
-	<Coords points="2725,1714 2725,1777 1017,1777 1017,1714"/>
+	<Coords points="1682,2747 1682,3009 1015,3009 1015,2747"/>
 	<TextEquiv>
-	<Unicode>znamená pro mnoho z nich, kteří Francouzi Věří HYCh 68 mlhard ko"
-' 7</Unicode></TextEquiv></TextRegion>
+	<Unicode>Venkovní stolování miluje snad každý. Ani
+u něj však není nutné snižovat nároky na es-
+tetiku nebo pohodlí. Na terase se vám bude
+skvostně vyjímat černý pětidílný set Merida
+z odolného akátového dřeva. Posezení s ro-
+dinou či přáteli bude opravdu stylové.</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r28" type="paragraph">
-	<Coords points="2727,1758 2727,1828 1016,1828 1016,1758"/>
+	<Coords points="1681,3146 1681,3306 877,3306 877,3146"/>
 	<TextEquiv>
-	<Unicode>. . , . ., , ; run, na kterém
-byh z jakehoh duvodu neplodni, Šže brzy, snad už zatím nehrozí</Unicode></TextEquiv></TextRegion>
+	<Unicode>UŽIJTE SI LÉTO v
+NAPLNO A STYLOVE!</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r29" type="paragraph">
-	<Coords points="2725,1824 2725,2004 987,2004 987,1824"/>
+	<Coords points="1370,3495 1370,3545 1320,3545 1320,3495"/>
 	<TextEquiv>
-	<Unicode>naději, že budou moci mít děti. Šdo dvou let, budou Žádná k0n_
-_ „Získali jsme plně funkční sper- moci provést první kurenw
-ma z genetického materiálu,“ gzkoušky na lidech.
-hlásí vědci z privátních labotaroří</Unicode></TextEquiv></TextRegion>
+	<Unicode>©</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r30" type="paragraph">
-	<Coords points="1894,1965 1894,2052 1017,2052 1017,1965"/>
+	<Coords points="2180,1682 2180,1720 1759,1720 1759,1682"/>
 	<TextEquiv>
-	<Unicode>ŠPokud vše vyjde a
-Kallistem nedaleko Lyonu, kterým</Unicode></TextEquiv></TextRegion>
+	<Unicode>PRO AKTIVNÍ ŘÁDĚNÍ</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r31" type="paragraph">
-	<Coords points="631,1557 631,1596 175,1596 175,1557"/>
+	<Coords points="2423,1738 2423,2139 1755,2139 1755,1738"/>
 	<TextEquiv>
-	<Unicode>Laboratorn|_sperm|e jsou</Unicode></TextEquiv></TextRegion>
+	<Unicode>Letní čas přímo vybízí ke sportům a různým
+zábavným aktivitám. Překvapte své děti
+trampolínou, na které se budou moci vydo-
+vádět i s kamarády. Tato zábava je čím dál
+vyhledávanější a naši nejmenší ji zbožňují.
+Pro osvěžení v parných vedrech jsou nejlep-
+ší bazény a vířivky Marimex. Jednoduchá
+a rychlá montáž konstrukce vám umožní po-
+nořit se do vody už během chvilky.</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r32" type="paragraph">
-	<Coords points="659,1588 659,1659 171,1659 171,1588"/>
+	<Coords points="2005,2220 2005,2246 1776,2246 1776,2220"/>
 	<TextEquiv>
-	<Unicode>hadějí pro neplogné muže.</Unicode></TextEquiv></TextRegion>
+	<Unicode>Pohovka AVILES</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r33" type="paragraph">
-	<Coords points="1892,2007 1892,2052 1581,2052 1581,2007"/>
+	<Coords points="2384,2258 2384,2358 1776,2358 1776,2258"/>
 	<TextEquiv>
-	<Unicode>testy budou shledá-</Unicode></TextEquiv></TextRegion>
+	<Unicode>ocelová kostra, lakovaná, umělý výplet, hnědá
+barva, včetně střechy, sedáků a 2 polštářů, barva
+tmavošedá, podnožka uskladněná ve vnitřním</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r34" type="paragraph">
-	<Coords points="1980,2276 1980,2309 1548,2309 1548,2276"/>
+	<Coords points="2432,2365 2432,2468 1776,2468 1776,2365"/>
 	<TextEquiv>
-	<Unicode>světu najevo, kdo je šéf.</Unicode></TextEquiv></TextRegion>
+	<Unicode>prostoru pohovky, v
+18 999 KC</Unicode></TextEquiv></TextRegion>
 	<TextRegion id="r35" type="paragraph">
-	<Coords points="1347,2245 1347,2532 138,2532 138,2245"/>
+	<Coords points="2110,2399 2110,2427 1776,2427 1776,2399"/>
 	<TextEquiv>
-	<Unicode>Jezrsr Kriste, vono
-se to jeste heibe!</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r36" type="paragraph">
-	<Coords points="1326,2550 1326,2984 797,2984 797,2550"/>
+	<Unicode>v/š/h: 180 x 145 x 160 cm.</Unicode></TextEquiv></TextRegion>
+	<TextRegion id="r36" type="caption">
+	<Coords points="2451,3509 2451,3527 2356,3527 2356,3509"/>
 	<TextEquiv>
-	<Unicode>WELLINGTON (štš) — Brit-
-ská novinářka Riahnnon Mills,
-doprovázející prince Harry-
-ho (30) na cestě po Novém
-Zélandu, si &gt;&gt;zahrála&lt;&lt; na
-legendární Marii Škopko-
-' vou, kterou v nesmrtelné
-komedii Slunce, seno,
-erotika (1991) ztvárnila
-Helena Růžičková 667).</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r37" type="paragraph">
-	<Coords points="1181,2996 1181,3157 540,3157 540,2996"/>
-	<TextEquiv>
-	<Unicode>Princ jí totiž nabídl
-„. syrovou ústřici a ona se
-. | !zatvářila podobně jako</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r38" type="paragraph">
-	<Coords points="1152,3125 1152,3299 824,3299 824,3125"/>
-	<TextEquiv>
-	<Unicode>Škopková, když před
-ní italský číšník do-
-nesl mísu mořských
-plodů. „Ježíši Kris-</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r39" type="paragraph">
-	<Coords points="1949,3275 1949,3342 825,3342 825,3275"/>
-	<TextEquiv>
-	<Unicode>. v „ nimované pohádk
-te, vono se to jeste</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r40" type="paragraph">
-	<Coords points="1925,3306 1925,3354 1577,3354 1577,3306"/>
-	<TextEquiv>
-	<Unicode>' - 'ŠWaIta Disneyho?</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r41" type="paragraph">
-	<Coords points="2012,3353 2012,3533 824,3533 824,3353"/>
-	<TextEquiv>
-	<Unicode>hejbe,“ zahřměla a e?Ajakjinak vysvět-
-tehdy Růžíčková; . ._ . \ . tpočínánílvího sam "
-Na rozdll od nl ' _. * '. _ _ \\ ' ?cevugandském údoll
-však reportérka ' r *! idepo, který vylezl '</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r42" type="paragraph">
-	<Coords points="2009,3522 2009,3625 659,3625 659,3522"/>
-	<TextEquiv>
-	<Unicode>“ ustríc1 pozrela. I a skálu a zopakoval
-___-.= kdyz malem neu- námou scénu z po</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r43" type="paragraph">
-	<Coords points="2013,3620 2013,3876 799,3876 799,3620"/>
-	<TextEquiv>
-	<Unicode>držela. Při pohledu hádkového příběhu Lví
-na její znechucený
-výraz se nabízí
-další hláška ze
-stejné trilogie: '
-„Velebnosti, to</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r44" type="paragraph">
-	<Coords points="365,3658 365,3772 143,3772 143,3658"/>
-	<TextEquiv>
-	<Unicode>Škopková. '
-wh., - vz..
-„.;-“:- '*.' '</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r45" type="paragraph">
-	<Coords points="245,3775 245,3785 236,3785 236,3775"/>
-	<TextEquiv>
-	<Unicode>4</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r46" type="paragraph">
-	<Coords points="3051,4000 3051,4053 2499,4053 2499,4000"/>
-	<TextEquiv>
-	<Unicode>l i “ "*"! i m—Biůslumšhů
-\ "MŠ uoanlpmmmnťnáánďtw ,</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r47" type="paragraph">
-	<Coords points="977,4185 977,4319 122,4319 122,4185"/>
-	<TextEquiv>
-	<Unicode>Můj známý používal jakési přípravky na vlasy
-(2 Kyjova), které úplně zastavily vypadávání vlasů
-a dokonce mu začaly růst i vlasy nové. Bohužel zná-
-mého nemohu nikde sehnat, jelikož se přestěhoval.</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r48" type="paragraph">
-	<Coords points="324,4324 324,4347 123,4347 123,4324"/>
-	<TextEquiv>
-	<Unicode>Poradíte mi?</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r49" type="paragraph">
-	<Coords points="534,4388 534,4703 121,4703 121,4388"/>
-	<TextEquiv>
-	<Unicode>Ano, jedna se určitě o přípravky
-řady THERMAL, které jsou v
-této oblasti odzkoušené a velmi
-účinné. Jedna kúra se skládá ze
-dvou krémů THERMAL (1
-ks za 330,— Kč) a šampónu
-THERMAL (330,— Kč). Celou
-vlasovou kúru tudíž pořídíte za
-990,— Kč. Hlavním prodejcem</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r50" type="paragraph">
-	<Coords points="726,4714 726,4738 372,4738 372,4714"/>
-	<TextEquiv>
-	<Unicode>WWW.thermal-sens.cz</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r51" type="paragraph">
-	<Coords points="976,4341 976,4363 820,4363 820,4341"/>
-	<TextEquiv>
-	<Unicode>T. H. Brno</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r52" type="paragraph">
-	<Coords points="999,4388 999,4695 565,4695 565,4388"/>
-	<TextEquiv>
-	<Unicode>těchto výrobků je firma SENS
-— 697 01 Kyjov, Komenského
-606, tel.:518 615 091. Na uve—
-dené adrese si můžete přípravky
-buď přímo zakoupit nebo ob—
-jednat i s přesným návodem na
-dobírku. Firma je též dodava do
-některých luxusních kadeřnictví „,
-i holičství.</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r53" type="paragraph">
-	<Coords points="999,4671 999,4753 983,4753 983,4671"/>
-	<TextEquiv>
-	<Unicode>237958/1</Unicode></TextEquiv></TextRegion>
-	<TextRegion id="r54" type="paragraph">
-	<Coords points="1641,4649 1641,4723 1019,4723 1019,4649"/>
-	<TextEquiv>
-	<Unicode>KAŽDÉ ÚTERÝ JEN</Unicode></TextEquiv></TextRegion></Page></PcGts>
+	<Unicode>06.06.16</Unicode></TextEquiv></TextRegion></Page></PcGts>

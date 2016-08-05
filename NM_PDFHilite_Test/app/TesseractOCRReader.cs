@@ -74,6 +74,36 @@ namespace NM_PDFHilite_Test.app
 						}
 					}
 				}
+
+				/*foreach (string file in Directory.GetFiles(imageFolder + "" + CurrentDocumentInfo.FileName.Split('.')[0]))
+				{
+					if (file.EndsWith(imageExtenion))
+					{
+						try
+						{
+							int pageNum = 0;
+
+							using (Pix pix = Pix.LoadFromFile(file))
+							{
+								using (Page page = engine.Process(pix))
+								{
+									ocrOutput += "===========";
+									ocrOutput += "Page " + (++pageNum);
+									ocrOutput += ("Mean confidence: " + page.GetMeanConfidence());
+									ocrOutput += "===========";
+
+									hocrOutput = page.GetHOCRText(pageNum);
+									ocrOutput += page.GetText();
+								}
+							}
+						}
+						catch (Exception e)
+						{
+							Trace.TraceError(e.ToString());
+							MessageBox.Show("Error while OCR of file OutputImages/" + file + "\n" + e);
+						}
+					}
+				}*/
 			}
 			catch (Exception e)
 			{

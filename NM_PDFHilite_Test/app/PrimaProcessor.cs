@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using Tesseract;
 
 namespace NM_PDFHilite_Test.app
 {
@@ -41,6 +43,7 @@ namespace NM_PDFHilite_Test.app
 					string outputImage = imageFolder + "out" + imageExtension;
 					string outputXml = imageFolder + "out.xml";
 					string recMode = "ocr-regions";
+					// alternatives: orc_words; orc_lines
 
 					Process p = new Process();
 					p.StartInfo.FileName = PATH_TO_PRIMA_TOOLS + "tess-to-page/bin/prima.exe";
@@ -85,6 +88,43 @@ namespace NM_PDFHilite_Test.app
 
 					string rawText = System.IO.File.ReadAllText(outputFolder + "/out.txt");
 					Output = rawText;
+
+					TesseractEngine engine = new TesseractEngine(@"../../tessdata", language, EngineMode.Default);
+
+					foreach (string file in Directory.GetFiles(imageFolder + "" + CurrentDocumentInfo.FileName.Split('.')[0]))
+					{
+						if (file.EndsWith(".tif"))
+						{
+							string ocrOutput = "", hocrOutput = "";
+
+							try
+							{
+								int pageNum = 0;
+
+								using (Pix pix = Pix.LoadFromFile(file))
+								{
+									using (Page page = engine.Process(pix))
+									{
+										ocrOutput += "===========";
+										ocrOutput += "Page " + (++pageNum);
+										ocrOutput += ("Mean confidence: " + page.GetMeanConfidence());
+										ocrOutput += "===========";
+
+										hocrOutput = page.GetHOCRText(pageNum);
+										ocrOutput += page.GetText();
+
+										File.WriteAllText(file + ".txt", ocrOutput);
+									}
+								}
+							}
+							catch (Exception e)
+							{
+								Trace.TraceError(e.ToString());
+								MessageBox.Show("Error while OCR of file OutputImages/" + file + "\n" + e);
+							}
+						}
+					}
+
 				}
 			}
 		}

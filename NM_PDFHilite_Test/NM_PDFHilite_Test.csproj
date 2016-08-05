@@ -69,6 +69,7 @@
     </ApplicationDefinition>
     <Compile Include="app\MetadataReader.cs" />
     <Compile Include="app\ConvertPdfToImage.cs" />
+    <Compile Include="app\PdfHighlight_Position.cs" />
     <Compile Include="app\PrimaProcessor.cs" />
     <Compile Include="app\TesseractOCRReader.cs" />
     <Compile Include="app\PdfDocument.cs" />

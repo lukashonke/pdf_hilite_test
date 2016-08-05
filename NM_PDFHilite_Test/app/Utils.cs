@@ -15,23 +15,31 @@ namespace NM_PDFHilite_Test.app
 			return parameter;
 		}
 
-		public static string Dehyphenate(string parameter)
+		/// <summary>
+		/// odebere "-" z koncu radku
+		/// pokud konci teckou nebo jinym znamenkem, prida mezeru.
+		/// </summary>
+		/// <param name="parameter"></param>
+		/// <returns></returns>
+		public static string DehyphenateLine(string parameter)
 		{
-			/*string temp = parameter.Text.TrimEnd();
+			string temp = parameter.TrimEnd();
 			string txt;
 
 			if (temp.EndsWith("-") || temp.EndsWith("–") || temp.EndsWith("-"))
 			{
-				txt = temp.Substring(0, temp.Length - 1); // cut off the last letter
+				//txt = temp.Substring(0, temp.Length - 1); // cut off the last letter
+				txt = temp.Substring(0, temp.Length - 1) + "";
 			}
 			else
 			{
-				txt = textString.Text;
+				txt = parameter;
 			}
 
-			rawText += txt + "";*/
-			return parameter;
-			//TODO
+			if (txt.EndsWith(".") || txt.EndsWith("!") || txt.EndsWith("?") || txt.EndsWith("\""))
+				txt += " ";
+
+			return txt;
 		}
 	}
 }
