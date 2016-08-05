@@ -64,6 +64,8 @@ namespace NM_PDFHilite_Test.app
 
 									hocrOutput = page.GetHOCRText(pageNum);
 									ocrOutput += page.GetText();
+
+
 								}
 							}
 						}

@@ -29,6 +29,8 @@ namespace NM_PDFHilite_Test.app
 			{
 				File pdfFile = new File(CurrentDocumentInfo.Path);
 
+				Debug.Write(pdfFile.Document);
+
 				Output += pdfFile.Document.Metadata.Content.OuterXml;
 			}
 			catch (Exception e)

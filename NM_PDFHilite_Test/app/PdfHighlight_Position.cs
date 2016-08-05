@@ -16,8 +16,10 @@ namespace NM_PDFHilite_Test.app
 	/// </summary>
 	public class PdfHighlight_Position : PdfReader
 	{
-		public PdfHighlight_Position(PdfDocumentInfo doc) : base(doc)
+		private List<WordPos> wordsToHighlight; 
+		public PdfHighlight_Position(PdfDocumentInfo doc, List<WordPos> wordsToHighlight) : base(doc)
 		{
+			this.wordsToHighlight = wordsToHighlight;
 		}
 
 		public override void Process()
@@ -28,14 +30,72 @@ namespace NM_PDFHilite_Test.app
 
 			IList<Quad> quads = new List<Quad>();
 
-			RectangleF rect = new RectangleF(66, 770, 84, 8);
-			Quad quad = Quad.Get(rect);
+			int documentWidth = pdfFile.Document.PageSize.Value.Width;
+			int documentHeight = pdfFile.Document.PageSize.Value.Height;
 
-			quads.Add(quad);
+			// 1929 1819 2353 1918
+			// [x:66,y:436,w:500,h:29]
+			// 300 DPI
 
-			new TextMarkup(page, quads, null, TextMarkup.MarkupTypeEnum.Highlight);
+			foreach (WordPos wordData in wordsToHighlight)
+			{
+				RectangleF rect = Utils.RecalculatePosition(documentWidth, documentHeight, wordData.SourceWidth, wordData.SourceHeight, wordData.X1,
+					wordData.Y1, wordData.X2, wordData.Y2);
+
+				Quad quad = Quad.Get(rect);
+
+				quads.Add(quad);
+
+				new TextMarkup(page, quads, null, TextMarkup.MarkupTypeEnum.Highlight);
+			}
 
 			pdfFile.Save(pdfFile.Path + "pos_highlighted.pdf", SerializationModeEnum.Incremental);
+		}
+	}
+
+	public struct WordPos
+	{
+		private int x1, y1, x2, y2;
+		private int sourceWidth, sourceHeight;
+
+		public WordPos(int x1, int y1, int x2, int y2, int sourceWidth, int sourceHeight)
+		{
+			this.x1 = x1;
+			this.y1 = y1;
+			this.x2 = x2;
+			this.y2 = y2;
+			this.sourceWidth = sourceWidth;
+			this.sourceHeight = sourceHeight;
+		}
+
+		public int X1
+		{
+			get { return x1; }
+		}
+
+		public int Y1
+		{
+			get { return y1; }
+		}
+
+		public int X2
+		{
+			get { return x2; }
+		}
+
+		public int Y2
+		{
+			get { return y2; }
+		}
+
+		public int SourceWidth
+		{
+			get { return sourceWidth; }
+		}
+
+		public int SourceHeight
+		{
+			get { return sourceHeight; }
 		}
 	}
 }
