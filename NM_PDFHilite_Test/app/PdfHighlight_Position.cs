@@ -60,7 +60,25 @@ namespace NM_PDFHilite_Test.app
 				// [x:66,y:436,w:500,h:29]
 				// 300 DPI
 
-				foreach (OCRWordData wordData in wordsData)
+				//TODO test the new method
+				foreach (string searched in wordsToHighlight)
+				{
+					List<OCRWordData> matches = FindMatches(searched);
+
+					foreach (OCRWordData wordData in matches)
+					{
+						RectangleF rect = Utils.RecalculatePosition(documentWidth, documentHeight, wordData.WordPosition.SourceWidth, wordData.WordPosition.SourceHeight, wordData.WordPosition.X1,
+						wordData.WordPosition.Y1, wordData.WordPosition.X2, wordData.WordPosition.Y2);
+
+						Quad quad = Quad.Get(rect);
+
+						quads.Add(quad);
+
+						new TextMarkup(page, quads, null, TextMarkup.MarkupTypeEnum.Highlight);
+					}
+				}
+
+				/*foreach (OCRWordData wordData in wordsData)
 				{
 					if (wordsToHighlight == null || wordsToHighlight.Contains(wordData.Word))
 					{
@@ -73,10 +91,82 @@ namespace NM_PDFHilite_Test.app
 
 						new TextMarkup(page, quads, null, TextMarkup.MarkupTypeEnum.Highlight);
 					}
-				}
+				}*/
 			}
 
 			pdfFile.Save(pdfFile.Path + "_pos_highlighted.pdf", SerializationModeEnum.Incremental);
+		}
+
+		private List<OCRWordData> FindMatches(string searched)
+		{
+			List<OCRWordData> matches = new List<OCRWordData>();
+
+			string[] splits = searched.Split(' ');
+
+			//TODO osekat/ignorovat pomlcky, carky a znaminka na konci -- pouzit regex?
+
+			if (splits.Length == 1) // searched pattern is one word only
+			{
+				foreach (OCRWordData wordData in wordsData) // search for all words in the document that match searched word
+				{
+					if (wordData.Word.Equals(splits[0], StringComparison.InvariantCultureIgnoreCase))
+					{
+						matches.Add(wordData); // and add them to the result list
+					}
+				}
+			}
+			else
+			{
+				for (int index = 0; index < wordsData.Count; index++)
+				{
+					OCRWordData wordData = wordsData[index];
+					List<OCRWordData> temp = new List<OCRWordData>();
+
+					bool found = true;
+
+					if (wordData.Word.Equals(splits[0], StringComparison.InvariantCultureIgnoreCase)) // first words match
+					{
+						temp.Add(wordData);
+
+						for (int i = 1; i < splits.Length; i++) // look for others
+						{
+							string nextSearched = splits[i];
+
+							if (index + i + 1 >= wordsData.Count)
+							{
+								// no more words in the document
+								found = false;
+								break;
+							}
+							else
+							{
+								OCRWordData nextWord = wordsData[index + i];
+
+								// doesnt match the next word
+								if (!nextWord.Word.Equals(nextSearched, StringComparison.InvariantCultureIgnoreCase))
+								{
+									found = false;
+									break;
+								}
+								else
+								{
+									temp.Add(nextWord);
+								}
+							}
+						}
+
+						if (found)
+						{
+							foreach (OCRWordData m in temp)
+							{
+								matches.Add(m);
+							}
+						}
+					}
+				}
+			}
+
+			return matches;
 		}
 	}
 
