@@ -78,9 +78,14 @@
 
         </Grid>
 
+        <StatusBar Name="Statusbar" Grid.Row="2" >
+            <StatusBarItem Name="StatusbarProgress" Content="Status_Progress" Height="20" VerticalAlignment="Top"/>
+        </StatusBar>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="21"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>

@@ -60,12 +60,28 @@ namespace NM_PDFHilite_Test.app
 				// [x:66,y:436,w:500,h:29]
 				// 300 DPI
 
-				//TODO test the new method
-				foreach (string searched in wordsToHighlight)
+				if (wordsToHighlight != null)
 				{
-					List<OCRWordData> matches = FindMatches(searched);
+					foreach (string searched in wordsToHighlight)
+					{
+						List<OCRWordData> matches = FindMatches(searched);
 
-					foreach (OCRWordData wordData in matches)
+						foreach (OCRWordData wordData in matches)
+						{
+							RectangleF rect = Utils.RecalculatePosition(documentWidth, documentHeight, wordData.WordPosition.SourceWidth, wordData.WordPosition.SourceHeight, wordData.WordPosition.X1,
+							wordData.WordPosition.Y1, wordData.WordPosition.X2, wordData.WordPosition.Y2);
+
+							Quad quad = Quad.Get(rect);
+
+							quads.Add(quad);
+
+							new TextMarkup(page, quads, null, TextMarkup.MarkupTypeEnum.Highlight);
+						}
+					}
+				}
+				else // highlight all
+				{
+					foreach (OCRWordData wordData in wordsData)
 					{
 						RectangleF rect = Utils.RecalculatePosition(documentWidth, documentHeight, wordData.WordPosition.SourceWidth, wordData.WordPosition.SourceHeight, wordData.WordPosition.X1,
 						wordData.WordPosition.Y1, wordData.WordPosition.X2, wordData.WordPosition.Y2);
@@ -78,20 +94,7 @@ namespace NM_PDFHilite_Test.app
 					}
 				}
 
-				/*foreach (OCRWordData wordData in wordsData)
-				{
-					if (wordsToHighlight == null || wordsToHighlight.Contains(wordData.Word))
-					{
-						RectangleF rect = Utils.RecalculatePosition(documentWidth, documentHeight, wordData.WordPosition.SourceWidth, wordData.WordPosition.SourceHeight, wordData.WordPosition.X1,
-						wordData.WordPosition.Y1, wordData.WordPosition.X2, wordData.WordPosition.Y2);
-
-						Quad quad = Quad.Get(rect);
-
-						quads.Add(quad);
-
-						new TextMarkup(page, quads, null, TextMarkup.MarkupTypeEnum.Highlight);
-					}
-				}*/
+				
 			}
 
 			pdfFile.Save(pdfFile.Path + "_pos_highlighted.pdf", SerializationModeEnum.Incremental);

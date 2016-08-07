@@ -231,8 +231,7 @@ namespace NM_PDFHilite_Test
 
 		private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
 		{
-			MainOutput.Text = e.ProgressPercentage + "% done\n";
-			MainOutput.Text += "(" + status + ")";
+			StatusbarProgress.Content = e.ProgressPercentage + "% done " + " | " + status;
 		}
 
 		private void StartProcessing()
