@@ -12,7 +12,7 @@ namespace NM_PDFHilite_Test.app
 {
 	public class PrimaProcessor : PdfReader
 	{
-		private const string PATH_TO_PRIMA_TOOLS = @"C:/NewtonMedia/PRIMA/";
+		private const string PATH_TO_PRIMA_TOOLS = @"D:/NewtonMedia/PRIMA/";
 
 		private const string language = "ces";
 		private const string imageFolder = "OutputImages/";
@@ -125,6 +125,17 @@ namespace NM_PDFHilite_Test.app
 						}
 					}
 
+
+					MessageBoxResult res = MessageBox.Show("Show result?", "Result", MessageBoxButton.YesNo);
+					if (res == MessageBoxResult.Yes || res == MessageBoxResult.OK)
+					{
+						string pathToJar = PATH_TO_PRIMA_TOOLS + "page-viewer/JPageViewer.jar";
+
+						p = new Process();
+						p.StartInfo.FileName = "java.exe";
+						p.StartInfo.Arguments = "-jar \"" + pathToJar + "\" \"" + Directory.GetCurrentDirectory() + "/" + outputXml + "\" \"" + Directory.GetCurrentDirectory() + "/" + outputImage + "\"";
+						p.Start();
+					}
 				}
 			}
 		}
